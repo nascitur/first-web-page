@@ -1,0 +1,55 @@
+# classnotes.css
+
+body {
+	background-color:#FFFFFF;
+	font-family: Helvetica;
+}
+
+.mainbody {
+	color:#333333;
+	line-height:150%;
+	margin: 5px 30px 5px 30px;
+}
+
+pre {
+	width: 80%;
+	line-height:105%;
+	white-space:pre;
+}
+
+.codesample {
+	border-style:solid;
+	border-width:1;
+	border-color:#999999;
+	color:#333333;
+	background-color:#E0E0E0;
+	padding:9px 10px 9px 10px;
+	margin:auto;
+	word-break:break-all;
+}
+
+div.title {
+	color: #C60;
+	background-color:#FFFFDD;
+	border-style:solid;
+	border-width:0px 1px 0px 1px;
+	border-color:#DDDD66;
+	color:#333300;
+	/* font-size:small; */
+	line-height:120%;
+	margin-top: 10px;
+	padding: 5px 20px 5px 20px;
+}
+
+div.otherpara {
+	color: #EE0000;
+	background-color:#6EDD66;
+
+}
+
+div, .para {
+	color: #0000EE;
+	background-color:#6EDD66;
+
+}
+
