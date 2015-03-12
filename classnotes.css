@@ -14,7 +14,8 @@ body {
 pre {
 	width: 80%;
 	line-height:105%;
-	white-space:pre;
+	white-space:pre-wrap;
+
 }
 
 .codesample {
@@ -26,6 +27,7 @@ pre {
 	padding:9px 10px 9px 10px;
 	margin:auto;
 	word-break:break-all;
+	text-align: left;
 }
 
 div.title {

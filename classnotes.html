@@ -2,11 +2,10 @@
 <html>
 
 <head>
-
   <meta charset="UTF-8">
-
   <title>Class notes from the first lesson</title>
-
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <link rel="stylesheet" href="classnotes.css" type="text/css">
 </head>
 
 <body>
@@ -39,15 +38,39 @@
 	<div class="paratitle">
 		<H2>Third paragraph</H2>
 	</div>
-</div>
 	<div class="paratext">
-		<P>This paragraph has an image and also uses both block and inline elements:<BR>
+		<P>This paragraph has an image, both block and inline elements, and some other stuff I ran across:<BR>
 			<IMG SRC="http://www.draconika.com/types/images/bronze-dragon.jpg"></IMG><BR>
-			<span>that is a super duper sweet dragon bro!</span><div>i mean,</div>sweet!</P>
+			<span>that is a super duper sweet dragon bro!</span>
 		</p>
 	</div>
 </div>
-
+<div class="otherpara">
+	<div class="otherparatitle">
+		<H2>Fourth paragraph</H2>
+	</div>
+	<div class="otherparatext">
+		<P>After playing with stylesheets a little, I discovered several cool things:
+			<LI>There seem to be two ways to do styles, the first is specific and only applies when you exactly phrase the class name the same, for example the below will only apply to divs with "class=cooltitle":
+				<PRE class="codesample">
+div.cooltitle {
+	color: #C60;
+	background-color:#FFFFDD;
+}
+				</PRE>
+			</LI>
+			<LI>This second way seems to apply to anything with the root phrase of the class, for example the below will only apply to divs with "class=cooltitle1", "cooltitle2" or "cooltitleb":
+				<PRE class="codesample">
+div, .cooltitle {
+	color: #C60;
+	ackground-color:#FFFFDD;
+}
+				</PRE>
+			</LI>
+			<LI>This is pretty neat.  I wouldn't have dug into css quite so deeply yet but I'm stuck on a plane with no internet connection so I can't continue the lesson.  Luckily I had an html and css cached to use for inspiration.
+			</LI>
+		</p>
+	</div>
 </div>
 
 </body>
