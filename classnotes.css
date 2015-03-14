@@ -19,6 +19,25 @@ strong.keyword {
 	font-weight: bold;
 }
 
+.section-texttoright {
+  float: right;
+  padding-left: 1%;
+  width: 45%;
+}
+
+.section-texttoleft {
+  float: left;
+  padding-right: 1%;
+  width: 45%;
+}
+
+.section-imagetoright{
+}
+
+.section-imagetoleft {
+
+}
+
 pre {
 	width: 80%;
 	line-height:105%;
@@ -49,14 +68,13 @@ pre {
 	line-height:120%;
 	margin-top: 10px;
 	padding: 5px 20px 5px 20px;
-}*/
-
+}
 
 .paratext {
 	font-family: "Helvetica";
 	background-color:#6EDD66;
 
-}
+}*/
 
 
 .otherpara {
