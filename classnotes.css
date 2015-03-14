@@ -9,7 +9,8 @@ h1 {
 	color:#141400;
 	font-size: 40px;
 	line-height:40px;
-	margin: auto;
+	margin-top: 40px;
+	margin-bottom: 40px;
 	font-family: "Open Sans", "Helvetica Neue", "Helvetica", Arial, sans-serif;
 	text-align: center;
 }
@@ -17,6 +18,15 @@ h1 {
 strong.keyword {
 	color:#E62E00;
 	font-weight: bold;
+}
+
+h2 {
+	color:#141400;
+	font-family: "Open Sans", "Helvetica Neue", "Helvetica", Arial, sans-serif;
+}
+
+.section1 {
+	margin-top: 20px;
 }
 
 .section-texttoright {
