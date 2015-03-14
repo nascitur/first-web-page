@@ -55,6 +55,15 @@ pre {
 
 }
 
+.greentext
+{
+color: green;
+}
+.boldtext
+{
+font-weight: bold;
+}
+
 .codesample {
 	border-style:solid;
 	border-width:1;

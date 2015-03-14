@@ -20,7 +20,7 @@
 			<H2>First lesson</H2>
 		</div>
 		<div class="paratext">
-			<P>The first lesson was a basic intro to the web, and then got into HTML stuff.  We learned about links to stuff: links to <a href="www.udacity.com">awesome educational sites</a> and classic <a href="www.google.com">sites everyone knows</a>. Links to sweet <a href="https://www.youtube.com/watch?v=cbP2N1BQdYc">cat videos</a> and that sort of thing. This paragraph conveniently also shows attribute tags and both block and inline elements.
+			<P>The first lesson was a basic intro to the web, and then got into HTML stuff.  We learned about links to stuff: links to <a href="www.udacity.com">awesome educational sites</a> and classic <a href="www.google.com">sites everyone knows</a>. Links to sweet <a href="https://www.youtube.com/watch?v=cbP2N1BQdYc">cat videos</a> and that sort of thing. This paragraph conveniently also shows attribute tags and both block and inline elements.  And of course a photo.
 			</P>
 		</div>
 	</div>
@@ -30,33 +30,25 @@
 </div>
 
 <div class="section2">
-	<div class="section-imagetoright">
-		<IMG SRC="http://cdn2.ubergizmo.com/wp-content/uploads/2012/12/gangnam-style.jpg" height=300px></IMG>
-	</div>
 	<div class="section-texttoleft">
 		<div class="sectiontitle">
 			<H2>Second lesson</H2>
 		</div>
-		<P>After playing with stylesheets a little, I discovered several cool things:
-			<LI>There seem to be two ways to do styles, the first is specific and only applies when you exactly phrase the class name the same, for example the below will only apply to divs with "class=cooltitle":
+		<P>The second lesson introduced stylesheets which are pretty mindblowing and give you huge power to customize how your site looks.  While everything in HTML is based on blocks, you have so much power with style sheets you can really make your page look like whatever you want and the blocks help organize and think about what you're doing.  I was stuck on a plane during this section so I ended up picking apart a cached site that was really pretty and stealing elements of their layout.  A few other things I learned: </P>
+			<LI>CSS is cascading, with the most specific element having the most power.
+			<LI>You seem to be able to combine styles for example span class="greenttext boldtext" would make <span class="greentext boldtext">green bold text</span>:
 				<PRE class="codesample">
-div.cooltitle {
-	color: #C60;
-	background-color:#FFFFDD;
+.greentext
+{
+color: green;
 }
-				</PRE>
-			</LI>
-			<LI>This second way seems to apply to anything with the root phrase of the class, for example the below will only apply to divs with "class=cooltitle1", "cooltitle2" or "cooltitleb":
-				<PRE class="codesample">
-div, .cooltitle {
-	color: #C60;
-	ackground-color:#FFFFDD;
-}
-				</PRE>
-			</LI>
-			<LI>This is pretty neat.  I wouldn't have dug into css quite so deeply yet but I'm stuck on a plane with no internet connection so I can't continue the lesson.  Luckily I had samples to use for inspiration.
-			</LI>
-		</p>
+.boldtext
+{
+font-weight: bold;
+}</PRE>
+	</div>
+	<div class="section-imagetoright">
+		<IMG SRC="http://cdn2.ubergizmo.com/wp-content/uploads/2012/12/gangnam-style.jpg" height=400px></IMG>
 	</div>
 </div>
 
