@@ -30,18 +30,10 @@ h2 {
 
 /* Overall section styles */
 
-.section1 {
-	display: flex;
-	margin-top: 20px;
-	margin-right: 30px;
-	margin-left: 30px;
-	font-family: Arial, Helvetica, sans-serif;
-}
-
-.section2 {
+.section {
 	display: flex;
 	margin-top: 10px;
-	margin-right: 10px;
+	margin-right: 30px;
 	margin-left: 30px;
 	font-family: Arial, Helvetica, sans-serif;
 }
