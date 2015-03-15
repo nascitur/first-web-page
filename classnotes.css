@@ -48,7 +48,7 @@ h2 {
 
 .section-texttoright {
   padding-left: 1%;
-  width: 45%;
+  width: 55%;
 }
 
 .section-texttoleft {
@@ -56,12 +56,12 @@ h2 {
   width: 55%;
 }
 
-.section-imagetoright{
+.imagetoright {
 	padding-left: 10%;
 }
 
-.section-imagetoleft {
-
+.imagetoleft {
+	padding-right: 10%;
 }
 
 /* Specific styles used within sections */
@@ -90,7 +90,7 @@ font-weight: bold;
 
 .codesample {
 	border-style:solid;
-	border-width:1;
+	border-width:1px;
 	border-color:#999999;
 	color:#333333;
 	background-color:#E0E0E0;
