@@ -1,9 +1,11 @@
-# classnotes.css
+/* classnotes.css */
 
 body {
 	background-color:#FFFFFF;
 	font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Heading definitions */
 
 h1 {
 	color:#141400;
@@ -25,7 +27,11 @@ h2 {
 	font-family: "Open Sans", "Helvetica Neue", "Helvetica", Arial, sans-serif;
 }
 
+
+/* Overall section styles */
+
 .section1 {
+	display: flex;
 	margin-top: 20px;
 	margin-right: 30px;
 	margin-left: 30px;
@@ -33,6 +39,7 @@ h2 {
 }
 
 .section2 {
+	display: flex;
 	margin-top: 10px;
 	margin-right: 10px;
 	margin-left: 30px;
@@ -40,13 +47,11 @@ h2 {
 }
 
 .section-texttoright {
-  float: right;
   padding-left: 1%;
   width: 45%;
 }
 
 .section-texttoleft {
-  float: left;
   padding-right: 1%;
   width: 55%;
 }
@@ -58,6 +63,8 @@ h2 {
 .section-imagetoleft {
 
 }
+
+/* Specific styles used within sections */
 
 .bulletlist {
 	padding-left: 20px;
@@ -93,6 +100,8 @@ font-weight: bold;
 	text-align: left;
 }
 
+/* Experimental stuff I gave up on */
+
 /*div.title {
 	color: #C60;
 	background-color:#FFFFDD;
@@ -110,10 +119,10 @@ font-weight: bold;
 	font-family: "Helvetica";
 	background-color:#6EDD66;
 
-}*/
-
+}
 
 .otherpara {
 	color: #EE0000;
 	background-color:#6EDD00;
+	*/
 
