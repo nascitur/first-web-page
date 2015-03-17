@@ -29,10 +29,10 @@
 	</div>
 	<div class="section-texttoright">
 		<div class="sectiontitle">
-			<H2>First lesson</H2>
+			<H2>Structure</H2>
 		</div>
 		<div>
-			<P>The first lesson was a basic intro to the web, and then got into HTML stuff.  We learned about links: links to <a href="http://www.udacity.com">awesome educational sites</a> and classic <a href="http://www.google.com">sites everyone knows</a>. Links to sweet <a href="https://www.youtube.com/watch?v=cbP2N1BQdYc">cat videos</a> and that sort of thing. This paragraph conveniently also shows attribute tags and both block and inline elements.  And of course a photo, like this sweet dragon pic.
+			<P>What a user sees on a website is their browser's interpretation of an HTML document sent to them by the server.  HTML is structured like a tree, each element containing multiple elements that can in turn contain multiple elements. The importance of structure is typical for computer code as it helps you convey to the stupid-literal computer what you're trying to do, though the details vary for each language.  In HTML the tree structure is typically shown in the code by indenting child elements.  Some of these elements define blocks, others are inline, and some examples of elements include paragraphs, lists, <a href="https://www.youtube.com/watch?v=cbP2N1BQdYc">links</a> and images like the sweet dragon to the left.
 			</P>
 		</div>
 	</div>
@@ -44,12 +44,12 @@
 <div class="section">
 	<div class="section-texttoleft">
 		<div class="sectiontitle">
-			<H2>Second lesson</H2>
+			<H2>Style</H2>
 		</div>
 		<div>The second lesson introduced stylesheets which are pretty mindblowing and give you huge power to customize how your site looks.  The HTML defines the content and the CSS defines the form.  While everything in HTML is based on boxes, with style sheets you can really make your page look like whatever you want. I was stuck on a plane during this section so I ended up picking apart a nice cached site and stealing elements of their layout.  I learned:</div>
 		<div class="bulletlist"><ul>
 			<LI>CSS is cascading, with the most specific element having the most power. Structure is critical both in HTML and CSS and how they link together.</LI>
-			<LI>Part of the main point of CSS is creating styles you can re-use.  Looking at "real" websites it seems there are whole hosts of standard style files called out. Laziness is essentially a virtue, sweet!</LI>
+			<LI>Part of the main point of CSS is creating styles you can re-use, ie rather than repeatedly declaring the same font/margin/etc over and over you can define it once (for example, as a "class") and then point to it whenever you want.  Re-use prevents mistakes, saves time, and improves consistency.</LI>
 			<LI>You seem to be able to combine styles for example span class="greenttext boldtext" would make <span class="greentext boldtext">green bold text</span>:
 				<PRE class="codesample">
 .greentext
@@ -60,12 +60,12 @@ color: green;
 {
 font-weight: bold;
 }</PRE></LI>
-			<LI>Each "box" on a website has layers like an onion from the inside to the outside: content, padding, border, margin.  There are lots of rules for style inheritance but rather than pretending to remember : use the little box in "Developer Tools" to experiment.</LI>
-			<LI>CODE->TEST->REFINE</LI>
+			<LI>Each "box" on a website has layers like an onion from the inside to the outside: content, padding, border, margin.  There are lots of rules for style inheritance but rather than pretending to remember : use the little box in "Developer Tools" to experiment.  Another key point: CODE->TEST->REFINE</LI>
+			<LI>Helvetica.  'nuff said</LI>
 		</ul></div>
 	</div>
 	<div class="imagetoright">
-		<IMG  SRC="images/bHzgKfH3Kps.jpg" alt="Picture of style">
+		<IMG  SRC="images/bHzgKfH3Kps.jpg" alt="Picture of style"style="PADDING-TOP:30px">
 	</div>
 </div>
 
