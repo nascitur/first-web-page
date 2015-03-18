@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 
   <!-- classnotes.html -->
 
@@ -7,10 +7,10 @@
 <html>
 
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Class notes from the first lesson</title>
 
-  <link rel="stylesheet" href="classnotes.css" type="text/css">
+  <link rel="stylesheet" href="classnotes.css" type="text/css" />
 </head>
 
 <body>
@@ -18,22 +18,21 @@
   <!-- PAGE TITLE -->
 
 <div class="title">
-  	<H1 class="pagetitle">Class notes from <strong class="keyword">Intro to Programming</strong></H1>
+  	<h1 class="pagetitle">Class notes from <strong class="keyword">Intro to Programming</strong></h1>
 </div>
 
   <!-- SECTION ONE -->
 
 <div class="section">
 	<div class="imagetoleft">
-		<IMG SRC="images/bronze-dragon.jpg" alt="Picture of Dragon">
+		<img SRC="images/bronze-dragon.jpg" alt="Picture of Dragon" style="width:400px;height:330px">
 	</div>
 	<div class="section-texttoright">
 		<div class="sectiontitle">
-			<H2>Structure</H2>
+			<h2>Structure</h2>
 		</div>
 		<div>
-			<P>What a user sees on a website is their browser's interpretation of an HTML document sent to them by the server.  HTML is structured like a tree, each element containing multiple elements that can in turn contain multiple elements. The importance of structure is typical for computer code as it helps you convey to the stupid-literal computer what you're trying to do, though the details vary for each language.  In HTML the tree structure is typically shown in the code by indenting child elements.  Some of these elements define blocks, others are inline, and some examples of elements include paragraphs, lists, <a href="https://www.youtube.com/watch?v=cbP2N1BQdYc">links</a> and images like the sweet dragon to the left.
-			</P>
+			<P>What a user sees on a website is their browser's interpretation of an HTML document sent to them by the server.  HTML is structured like a tree, each element containing multiple elements that can in turn contain multiple elements. The importance of structure is typical for computer code as it helps you convey to the stupid-literal computer what you're trying to do, though the details vary for each language.  In HTML the tree structure is typically shown in the code by indenting child elements.  Some of these elements define blocks, others are inline, and some examples of elements include paragraphs, lists, <a href="https://www.youtube.com/watch?v=cbP2N1BQdYc">links</a> and images like the sweet dragon to the left.</P>
 		</div>
 	</div>
 
@@ -42,31 +41,32 @@
   <!-- SECTION TWO-->
 
 <div class="section">
-	<div class="section-texttoleft">
-		<div class="sectiontitle">
-			<H2>Style</H2>
-		</div>
-		<div>The second lesson introduced stylesheets which are pretty mindblowing and give you huge power to customize how your site looks.  The HTML defines the content and the CSS defines the form.  While everything in HTML is based on boxes, with style sheets you can really make your page look like whatever you want. I was stuck on a plane during this section so I ended up picking apart a nice cached site and stealing elements of their layout.  I learned:</div>
-		<div class="bulletlist"><ul>
-			<LI>CSS is cascading, with the most specific element having the most power. Structure is critical both in HTML and CSS and how they link together.</LI>
-			<LI>Part of the main point of CSS is creating styles you can re-use, ie rather than repeatedly declaring the same font/margin/etc over and over you can define it once (for example, as a "class") and then point to it whenever you want.  Re-use prevents mistakes, saves time, and improves consistency.</LI>
-			<LI>You seem to be able to combine styles for example span class="greenttext boldtext" would make <span class="greentext boldtext">green bold text</span>:
-				<PRE class="codesample">
-.greentext
-{
-color: green;
-}
-.boldtext
-{
+	<div class="section-texttoleft">         
+		<div class="sectiontitle">             
+			<h2>Style</h2>
+		</div>         
+		<div>
+			The second lesson introduced stylesheets which are pretty mindblowing and give you huge power to customize how your site looks.  The HTML defines the content and the CSS defines the form.  While everything in HTML is based on boxes, with style sheets you can really make your page look like whatever you want. I was stuck on a plane during this section so I ended up picking apart a nice cachedsite and stealing elements of their layout.  I learned:
+		</div>         
+		<div class="bulletlist">
+			<ul>             
+				<li>CSS is cascading, with the most specific element having the most power. Structure is critical both in HTML and CSS and how they link together</li>             
+				<li>Part of the main point of CSS is creating styles you can re-use, ie rather than repeatedly declaring the same font/margin/etc over and over you can define it once (for example, as a "class") and then point to it whenever you want.  Re-use prevents mistakes, saves time,and improves consistency.</li>             
+				<li>You seem to be able to combine styles for example span class="greenttext boldtext" would make <span class="greentext boldtext">green bold text</span>:<pre class="codesample"> 
+.greentext { 
+	color: green; 
+} 
+.boldtext { 
 font-weight: bold;
-}</PRE></LI>
-			<LI>Each "box" on a website has layers like an onion from the inside to the outside: content, padding, border, margin.  There are lots of rules for style inheritance but rather than pretending to remember : use the little box in "Developer Tools" to experiment.  Another key point: CODE->TEST->REFINE</LI>
-			<LI>Helvetica.  'nuff said</LI>
-		</ul></div>
-	</div>
+}</pre></li>
+				<li>Each "box" on a website has layers like an onion from the inside to the outside: content, padding, border, margin.  There are lots of rules for style inheritance but rather than pretending to remember : use the little box in "Developer Tools" to experiment.  Another key point: CODE->TEST->REFINE</li>             
+				<li>Helvetica.  'nuff said</li>
+			</ul>
+		</div>     
+	</div>     
 	<div class="imagetoright">
-		<IMG  SRC="images/bHzgKfH3Kps.jpg" alt="Picture of style"style="PADDING-TOP:30px">
-	</div>
+		<img SRC="images/bHzgKfH3Kps.jpg" alt="Picture of style" style="padding-top:30px;width:200px;height:500px">
+	</div> 
 </div>
 
 </body>
