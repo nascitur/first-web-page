@@ -32,20 +32,20 @@ h2 {
 
 .section {
 	display: flex;
+	font-family: Arial, Helvetica, sans-serif;
 	margin-top: 10px;
 	margin-right: 30px;
 	margin-left: 30px;
-	font-family: Arial, Helvetica, sans-serif;
 }
 
 .section-texttoright {
-  padding-left: 1%;
-  width: 55%;
+  	padding-left: 1%;
+  	width: 55%;
 }
 
 .section-texttoleft {
-  padding-right: 1%;
-  width: 55%;
+  	padding-right: 1%;
+  	width: 55%;
 }
 
 .imagetoright {
@@ -64,31 +64,31 @@ h2 {
 }
 
 pre {
-	width: 80%;
 	line-height:105%;
 	white-space:pre-wrap;
-
+	width: 80%;
 }
 
 .greentext
 {
-color: green;
+	color: green;
 }
+
 .boldtext
 {
-font-weight: bold;
+	font-weight: bold;
 }
 
 .codesample {
+	background-color:#E0E0E0;
 	border-style:solid;
 	border-width:1px;
 	border-color:#999999;
 	color:#333333;
-	background-color:#E0E0E0;
-	padding:9px 10px 9px 10px;
 	margin:auto;
+	padding:9px 10px 9px 10px;
+	text-align:left;
 	word-break:break-all;
-	text-align: left;
 }
 
 /* Experimental stuff I gave up on */
