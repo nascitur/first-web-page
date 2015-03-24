@@ -91,6 +91,14 @@ pre {
 	word-break:break-all;
 }
 
+.rotate90 {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
 /* Experimental stuff I gave up on */
 
 /*div.title {
