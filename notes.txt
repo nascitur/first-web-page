@@ -1,0 +1,59 @@
+Structure
+images/bronze-dragon.jpg "Picture of Dragon" 
+What a user sees on a website is their browser's interpretation of an HTML document sent to them by the server.  HTML is structured like a tree, each element containing multiple elements that can in turn contain multiple elements. The importance of structure is typical for computer code as it helps you convey to the stupid-literal computer what you're trying to do, though the details vary for each language.  In HTML the tree structure is typically shown in the code by indenting child elements.  Some of these elements define blocks, others are inline, and some paragraphs, lists, <a href="https://www.youtube.com/watch?v=cbP2N1BQdYc">links</a> and images like the sweet dragon to the left.
+
+Style
+image
+The second lesson introduced stylesheets which are pretty mindblowing and give you huge power to customize how your site looks. The HTML defines the structure and content and the CSS defines the form and style.  While everything in HTML is based on boxes, with style sheets you can really make your page look like whatever you want. I was stuck on a plane during this section so I ended up picking apart a nice cached site and stealing elements of their layout.  I learned:
+* CSS is cascading, with the most specific element having the most power. Structure is critical both in HTML and CSS and how they link together
+* Part of the main point of CSS is creating styles you can re-use, ie rather than repeatedly declaring the same font/margin/etc over and over you can define it once (for example, as a "class") and then point to it whenever you want.  Re-use prevents mistakes, saves time,and improves consistency.
+* You seem to be able to combine styles for example span class="greenttext boldtext" would make <span class="greentext boldtext">green bold text</span>:<pre class="codesample">.greentext {
+  color: green;
+}
+.boldtext {
+  font-weight: bold;
+}</pre></li>
+        <li>Each "box" on a website has layers like an onion from the inside
+          to the outside: content, padding, border, margin.  There are lots
+          of rules for style inheritance but rather than pretending to
+          remember : use the little box in "Developer Tools" to experiment.
+          Another key point: CODE->TEST->REFINE
+*
+
+Python Details
+IMGTAG: 
+Raw Python commands, similar to many languages:
+** Variables and numbers: number = 1 + 1
+** Variables and strings: string = "!" + '!' +'?'
+** String chopping: chopped = string[startposition:endposition]
+** Lists of anything: list = ['a','n','y','thing!']
+** Lists return elements like strings: list[0]
+** Lists can be expanded with: list.append(newvalue) but this is different than '+' which concatenates the two together... append adds newvalue as a single element
+** REturn length of strings/lists: len(string_or_list)
+** Printing text math: print "Text" + number * string[1]
+** Finding position in string: string.find('text',start,end)
+** Finding if something in list (true/false): value in list
+** Quotes: "" '' nested and valid, """""" for multiple lines
+** Functions:
+def functionname(passtovariable):
+    [do stuff with passtovariable]
+    return stuff
+next command
+* While (keeps doing stuff while true):
+while [truefalsetest]:
+    [do something when true]
+    [do something next when true]
+    [break escapes while loop]
+next command
+** IfThenElse (does one thing if true and another if false):
+if [truefalsetest]:
+    [do something when true or return True]
+else:
+    [do something when false or return False]
+next command
+Concepts that will be useful:
+** Use triple quotes to do several lines like pre """ text on other lines """
+** Use positive/negative string indexes to separate tags from text, ie innertext = tagstring[5,-6]
+** Def makes a function that can be used later by calling its name and passing data as an input.
+** Return defines the output of a function, without which the function does nothing.
+** Aliasing can be useful but also cause bugs... this occurs when two variables refer to the same object in memory, for example when you say var1 = var2, and then the underlying object changes, resulting in changes to both vars.
