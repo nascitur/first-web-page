@@ -142,12 +142,13 @@ next command</pre></li>
 <pre class="codesample">while [truefalsetest]:
     [do something when true]
     [do something next when true]
+    [break escapes while loop]
 next command</pre></li>
         <li><b>IfThenElse (does one thing if true and another if false):</b>
 <pre class="codesample">if [truefalsetest]:
-    [do something when true]
+    [do something when true or return True]
 else:
-    [do something when false]
+    [do something when false or return False]
 next command</pre></li>
       </ul>
     </div>
