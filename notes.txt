@@ -5,23 +5,23 @@ What a user sees on a website is their browser's interpretation of an HTML docum
 Style
 image
 The second lesson introduced stylesheets which are pretty mindblowing and give you huge power to customize how your site looks. The HTML defines the structure and content and the CSS defines the form and style.  While everything in HTML is based on boxes, with style sheets you can really make your page look like whatever you want. I was stuck on a plane during this section so I ended up picking apart a nice cached site and stealing elements of their layout.  I learned:
-* CSS is cascading, with the most specific element having the most power. Structure is critical both in HTML and CSS and how they link together
-* Part of the main point of CSS is creating styles you can re-use, ie rather than repeatedly declaring the same font/margin/etc over and over you can define it once (for example, as a "class") and then point to it whenever you want.  Re-use prevents mistakes, saves time,and improves consistency.
-* You seem to be able to combine styles for example span class="greenttext boldtext" would make <span class="greentext boldtext">green bold text</span>:<pre class="codesample">.greentext {
+** CSS is cascading, with the most specific element having the most power. Structure is critical both in HTML and CSS and how they link together
+** Part of the main point of CSS is creating styles you can re-use, ie rather than repeatedly declaring the same font/margin/etc over and over you can define it once (for example, as a "class") and then point to it whenever you want.  Re-use prevents mistakes, saves time,and improves consistency.
+** You seem to be able to combine styles for example span class="greenttext boldtext" would make <span class="greentext boldtext">green bold text</span>:<pre class="codesample">.greentext {
   color: green;
 }
 .boldtext {
   font-weight: bold;
-}</pre></li>
-        <li>Each "box" on a website has layers like an onion from the inside
-          to the outside: content, padding, border, margin.  There are lots
-          of rules for style inheritance but rather than pretending to
-          remember : use the little box in "Developer Tools" to experiment.
-          Another key point: CODE->TEST->REFINE
-*
+}</pre>
+** Each "box" on a website has layers like an onion from the inside to the outside: content, padding, border, margin. There are lots of rules for style inheritance but rather than pretending to remember : use the little box in "Developer Tools" to experiment. Another key point: CODE->TEST->REFINE
+** Helvetica. 'nuff said
+
+Talking to Computers
+image
+Computers don't understand natural language primarily because they take things perfectly literally. Programmling languages are designed to bridge the gap between this ultimate literal machine code and something that we humans can understand. Some computer programs are compiled directly into machine code so they can be run as binaries by themselves, while a second style are interpreted, meaning that they require a second program to run by interpreting the code on the spot. Python is an example of this style we'll be using.
 
 Python Details
-IMGTAG: 
+image
 Raw Python commands, similar to many languages:
 ** Variables and numbers: number = 1 + 1
 ** Variables and strings: string = "!" + '!' +'?'

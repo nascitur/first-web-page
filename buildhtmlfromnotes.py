@@ -17,6 +17,11 @@ import getimageinfo
 def read_section_into_list(notes_lines):
     pass
 
+# This reads the notes text file and turns the title, image, and section text
+# into a list of lists (notes_list) that will be HTMLified later.
+# this_sect is used to parse each section, with a structure:
+# [title string, image info as a list, section text string]
+
 def read_notes_into_list(notesfilename):
     notes_list = []
     this_sect = []
@@ -25,29 +30,30 @@ def read_notes_into_list(notesfilename):
     with open(notesfilename, 'r') as f:
         for line in f:
             if line in ['\n', '\r\n']:
+                this_sect[1] = parse_image_text(this_sect[1])
                 notes_list.append(this_sect)
                 print this_sect
                 this_sect = []
                 i += 1
                 j = 0
-            elif j == 0:
-                this_sect.append(line.rstrip())
-                print "Got title for", i
-                j += 1
-            elif j == 1:
-                this_sect.append(line.rstrip())
-                print "Got image for", i
-                j += 1
-            elif j == 2:
-                this_sect.append(line.rstrip())
-                j += 1
             elif j == 3:
-                this_sect[2] += line
+                this_sect[2] += ' ' + line.rstrip()
+            else:
+                this_sect.append(line.rstrip())
+                j += 1
+        this_sect[1] = parse_image_text(this_sect[1])
+        notes_list.append(this_sect)
     return notes_list
-#        notes_data = f.read()
 
-#   while notes_data != ''
-#        notes
+
+# Image text line could be messy, this parses it and returns a 2 element list
+# of [image file string, image alt text]
+# this is simple now but could be robustified to handle weird input
+
+def parse_image_text(imagetext):
+    image_fileandalt = [imagetext[:imagetext.find(' ')],
+                        imagetext[imagetext.find(' ')+1:]]
+    return image_fileandalt
 
 
 # Deliver appropriate HTML IMG tag string from a filename and the alt tag text
@@ -67,12 +73,8 @@ def tag_image(file_name, alt_string):
 # Main function
 
 def main():
-    funky = []
-    funky.append("funk")
-    funky.append("more funk")
-    funky.append("most funk")
-    print funky
     print read_notes_into_list("testnotes.txt")
+    print read_notes_into_list("notes.txt")
 
 # Do main
 
