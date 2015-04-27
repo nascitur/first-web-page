@@ -51,7 +51,7 @@ def parse_image_text(imagetext):
 # Deliver appropriate HTML IMG tag string from a filename and the alt tag text
 # It will automagically determine the pixel size
 
-def tag_image(file_name, alt_string):
+def tag_image(file_name, alt_string, max_width):
     image_tag = '<img src="' + file_name
     image_tag += '" alt=' + alt_string
     try:
@@ -60,8 +60,12 @@ def tag_image(file_name, alt_string):
     except:
         size = ['', 100, 100]
         print "File error loading " + file_name
-    image_tag += ' style="width:' + str(size[1])
-    image_tag += 'px;height:' + str(size[2]) + 'px">'
+    resized = list(size)
+    if resized[1] > max_width:
+        resized[2] = max_width * resized[2] / resized[1]
+        resized[1] = max_width
+    image_tag += ' style="width:' + str(resized[1])
+    image_tag += 'px;height:' + str(resized[2]) + 'px">'
     return image_tag
 
 # From the concepts list, Generate all HTML into a big string 
@@ -106,13 +110,13 @@ def generate_all_HTML(concepts_list):
     </div>
   </div>
   <div class="imagetoleft">
-    ''' + tag_image(concept[1][0], concept[1][1]) + '''
+    ''' + tag_image(concept[1][0], concept[1][1], 400) + '''
   </div>
 </div>'''
         else:
             all_html += '''
   <div class="imagetoleft">
-    ''' + tag_image(concept[1][0], concept[1][1]) + '''
+    ''' + tag_image(concept[1][0], concept[1][1], 400) + '''
   </div>
   <div class="section-texttoright">
     <div class="sectiontitle">
