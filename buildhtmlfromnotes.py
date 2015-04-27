@@ -68,9 +68,9 @@ def tag_image(file_name, alt_string, max_width):
     image_tag += 'px;height:' + str(resized[2]) + 'px">'
     return image_tag
 
-# From the concepts list, Generate all HTML into a big string 
+# From the concepts list, Generate all HTML into a big string
 
-def generate_all_HTML(concepts_list):
+def generate_all_html(concepts_list):
     text_left = False
     all_html = '''
 <!doctype html>
@@ -101,7 +101,7 @@ def generate_all_HTML(concepts_list):
 <div class="section">'''
         if text_left:
             all_html += '''
-  <div class="section-texttoright">
+  <div class="section-texttoleft">
     <div class="sectiontitle">
       <h2>''' + concept[0] + '''</h2>
     </div>
@@ -134,15 +134,20 @@ def generate_all_HTML(concepts_list):
 </body>
 
 </html>'''
-    all_html = all_html.replace('**', '<li>')
-    all_html = all_html.replace(': <li>', ':<ul>\n<li>')
-    all_html = all_html.replace('<pre>','<pre class="codesample">')
+    all_html = all_html.replace(': **', ''':
+    </div>
+    <div class="bulletlist">
+      <ul>
+        <li>''')
+    all_html = all_html.replace('**', '''
+        <li>''')
+    all_html = all_html.replace('<pre>', '<pre class="codesample">')
     return all_html
 
 
 # Push HTML into a file
 
-def write_html_to_file(all_html,output_file):
+def write_html_to_file(all_html, output_file):
     with open(output_file, 'w') as openedfile:
         openedfile.write(all_html)
     print "HTML generated to" + output_file
@@ -151,8 +156,8 @@ def write_html_to_file(all_html,output_file):
 
 def main():
     concepts_list = read_notes_into_list("notes.txt")
-    all_html = generate_all_HTML(concepts_list)
-    write_html_to_file(all_html,"classnotesbuilt.html")
+    all_html = generate_all_html(concepts_list)
+    write_html_to_file(all_html, "classnotesbuilt.html")
 
 # Do main
 

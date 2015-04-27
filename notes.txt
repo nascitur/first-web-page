@@ -51,7 +51,7 @@ if [truefalsetest]:
 else:
     [do something when false or return False]
 next command</pre>
-Concepts that will be useful:
+Other concepts that will be useful...
 ** Use triple quotes to do several lines like pre """ text on other lines """
 ** Use positive/negative string indexes to separate tags from text, ie innertext = tagstring[5,-6]
 ** Def makes a function that can be used later by calling its name and passing data as an input.
