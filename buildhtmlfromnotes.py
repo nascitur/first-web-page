@@ -109,7 +109,7 @@ def generate_all_HTML(concepts_list):
       <P>''' + concept[2] + '''</P>
     </div>
   </div>
-  <div class="imagetoleft">
+  <div class="imagetoright">
     ''' + tag_image(concept[1][0], concept[1][1], 400) + '''
   </div>
 </div>'''
@@ -135,6 +135,8 @@ def generate_all_HTML(concepts_list):
 
 </html>'''
     all_html = all_html.replace('**', '<li>')
+    all_html = all_html.replace(': <li>', ':<ul>\n<li>')
+    all_html = all_html.replace('<pre>','<pre class="codesample">')
     return all_html
 
 
