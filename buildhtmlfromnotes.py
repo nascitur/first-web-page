@@ -1,16 +1,14 @@
 #!/usr/bin/python
 #
-# buildhtmlfromnotes.py 
+# buildhtmlfromnotes.py
 #
-# Goal of this is to generate HTML from  notes scrawled in a 
-# text file with the best ratio of cool output formatting to 
+# Goal of this is to generate HTML from  notes scrawled in a
+# text file with the best ratio of cool output formatting to
 # easy unstructured notetaking.
 
 # Import necessary modules
 
-import mmap
 import os
-import xml.etree.ElementTree as ET
 import getimageinfo
 
 
@@ -23,8 +21,8 @@ def read_notes_into_list(notesfilename):
     notes_list = []
     this_sect = []
     j = 0
-    with open(notesfilename, 'r') as f:
-        for line in f:
+    with open(notesfilename, 'r') as openedfile:
+        for line in openedfile:
             if line in ['\n', '\r\n']:
                 this_sect[1] = parse_image_text(this_sect[1])
                 notes_list.append(this_sect)
@@ -40,7 +38,7 @@ def read_notes_into_list(notesfilename):
     return notes_list
 
 
-# Image text line in the notes file could be messy, this parses it and returns 
+# Image text line in the notes file could be messy, this parses it and returns
 # a 2 element list of [image file string, image alt text]
 # this is simple now but could be robustified to handle weird input
 
@@ -55,14 +53,14 @@ def parse_image_text(imagetext):
 
 def tag_image(file_name, alt_string):
     image_tag = '<img src="' + file_name
-    image_tag += '" alt="' + alt_string
+    image_tag += '" alt=' + alt_string
     try:
         with open(file_name, "r") as myfile:
             size = getimageinfo.getImageInfo(myfile.read())
     except:
         size = ['', 100, 100]
         print "File error loading " + file_name
-    image_tag += '" style="width:' + str(size[1])
+    image_tag += ' style="width:' + str(size[1])
     image_tag += 'px;height:' + str(size[2]) + 'px">'
     return image_tag
 
@@ -93,6 +91,8 @@ def generate_all_HTML(concepts_list):
     <h1 class="pagetitle">Class notes from <strong class="keyword">Intro to Programming</strong></h1>
 </div>'''
     for concept in concepts_list:
+        print concept[0]
+        print concept[1]
         all_html += '''
 <div class="section">'''
         if text_left:
@@ -124,12 +124,13 @@ def generate_all_HTML(concepts_list):
   </div>
 </div>'''
         text_left = not text_left
-    all_html += '''  
+    all_html += '''
     </div>
 
 </body>
 
 </html>'''
+    all_html = all_html.replace('**', '<li>')
     return all_html
 
 # Main function
@@ -140,5 +141,6 @@ def main():
 
 # Do main
 
-if __name__ == "__main__": 
+if __name__ == "__main__":
     main()
+
