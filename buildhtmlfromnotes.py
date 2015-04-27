@@ -56,8 +56,12 @@ def parse_image_text(imagetext):
 def tag_image(file_name, alt_string):
     image_tag = '<img src="' + file_name
     image_tag += '" alt="' + alt_string
-    with open(file_name, "r") as myfile:
-        size = getimageinfo.getImageInfo(myfile.read())
+    try:
+        with open(file_name, "r") as myfile:
+            size = getimageinfo.getImageInfo(myfile.read())
+    except:
+        size = ['', 100, 100]
+        print "File error loading " + file_name
     image_tag += '" style="width:' + str(size[1])
     image_tag += 'px;height:' + str(size[2]) + 'px">'
     return image_tag
@@ -102,13 +106,13 @@ def generate_all_HTML(concepts_list):
     </div>
   </div>
   <div class="imagetoleft">
-    ''' + tag_image(concept[1]) + '''
+    ''' + tag_image(concept[1][0], concept[1][1]) + '''
   </div>
 </div>'''
         else:
             all_html += '''
   <div class="imagetoleft">
-    ''' + tag_image(concept[1]) + '''
+    ''' + tag_image(concept[1][0], concept[1][1]) + '''
   </div>
   <div class="section-texttoright">
     <div class="sectiontitle">
@@ -131,7 +135,7 @@ def generate_all_HTML(concepts_list):
 # Main function
 
 def main():
-    concepts_list = read_notes_into_list("testnotes.txt")
+    concepts_list = read_notes_into_list("notes.txt")
     print generate_all_HTML(concepts_list)
 
 # Do main
