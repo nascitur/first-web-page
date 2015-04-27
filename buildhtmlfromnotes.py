@@ -64,7 +64,7 @@ def tag_image(file_name, alt_string):
     image_tag += 'px;height:' + str(size[2]) + 'px">'
     return image_tag
 
-# Generate all HTML
+# From the concepts list, Generate all HTML into a big string 
 
 def generate_all_HTML(concepts_list):
     text_left = False
@@ -133,11 +133,20 @@ def generate_all_HTML(concepts_list):
     all_html = all_html.replace('**', '<li>')
     return all_html
 
+
+# Push HTML into a file
+
+def write_html_to_file(all_html,output_file):
+    with open(output_file, 'w') as openedfile:
+        openedfile.write(all_html)
+    print "HTML generated to" + output_file
+
 # Main function
 
 def main():
     concepts_list = read_notes_into_list("notes.txt")
-    print generate_all_HTML(concepts_list)
+    all_html = generate_all_HTML(concepts_list)
+    write_html_to_file(all_html,"classnotesbuilt.html")
 
 # Do main
 

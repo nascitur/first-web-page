@@ -39,18 +39,18 @@ def functionname(passtovariable):
     [do stuff with passtovariable]
     return stuff
 next command
-* While (keeps doing stuff while true):
+** While (keeps doing stuff while true):<pre>
 while [truefalsetest]:
     [do something when true]
     [do something next when true]
     [break escapes while loop]
-next command
-** IfThenElse (does one thing if true and another if false):
+next command</pre>
+** IfThenElse (does one thing if true and another if false):<pre>
 if [truefalsetest]:
     [do something when true or return True]
 else:
     [do something when false or return False]
-next command
+next command</pre>
 Concepts that will be useful:
 ** Use triple quotes to do several lines like pre """ text on other lines """
 ** Use positive/negative string indexes to separate tags from text, ie innertext = tagstring[5,-6]
