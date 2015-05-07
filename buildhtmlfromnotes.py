@@ -6,6 +6,10 @@
 # text file with the best ratio of cool output formatting to
 # easy unstructured notetaking.
 
+"""
+Generates W3C-friendly HTML document from notes text file.
+"""
+
 # Import necessary modules
 
 import os
@@ -18,6 +22,10 @@ import getimageinfo
 # [title string, image info as a list, section text string]
 
 def read_notes_into_list(notesfilename):
+    """
+    Reads a plaintext file and breaks it into concepts (separated by blank
+    lines) and returns these as a list
+    """
     notes_list = []
     this_sect = []
     j = 0
@@ -43,6 +51,9 @@ def read_notes_into_list(notesfilename):
 # this is simple now but could be robustified to handle weird input
 
 def parse_image_text(imagetext):
+    """
+    The image line in the notes text file is messy, this parses it.
+    """
     image_fileandalt = [imagetext[:imagetext.find(' ')],
                         imagetext[imagetext.find(' ')+1:]]
     return image_fileandalt
@@ -52,6 +63,10 @@ def parse_image_text(imagetext):
 # It will automagically determine the pixel size
 
 def tag_image(file_name, alt_string, max_width):
+    """
+    Returns an HTML image tag constructed from passed image filename, alt text,
+    and the image's size (after auto-resizing to fit max_width)
+    """
     image_tag = '<img src="' + file_name
     image_tag += '" alt=' + alt_string
     try:
@@ -71,6 +86,9 @@ def tag_image(file_name, alt_string, max_width):
 # From the concepts list, Generate all HTML into a big string
 
 def generate_all_html(concepts_list):
+    """
+    Outputs a string of HTML build from inputted concepts_list
+    """
     text_left = False
     all_html = '''
 <!doctype html>
@@ -106,7 +124,7 @@ def generate_all_html(concepts_list):
       <h2>''' + concept[0] + '''</h2>
     </div>
     <div>
-      <P>''' + concept[2] 
+      <P>''' + concept[2]
             if concept[2].find("**") != -1:
                 all_html += "</ul>"
             else:
@@ -157,6 +175,9 @@ def generate_all_html(concepts_list):
 # Push HTML into a file
 
 def write_html_to_file(all_html, output_file):
+    """
+    simply outputs a string of HTML to the specified output file
+    """
     with open(output_file, 'w') as openedfile:
         openedfile.write(all_html)
     print "HTML generated to" + output_file
@@ -164,6 +185,7 @@ def write_html_to_file(all_html, output_file):
 # Main function
 
 def main():
+    ''' Reads the specified notes file and outputs it as a new HTML file'''
     concepts_list = read_notes_into_list("notes.txt")
     all_html = generate_all_html(concepts_list)
     write_html_to_file(all_html, "classnotesbuilt.html")
