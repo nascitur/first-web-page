@@ -12,7 +12,6 @@ Generates W3C-friendly HTML document from notes text file.
 
 # Import necessary modules
 
-import os
 import getimageinfo
 
 
