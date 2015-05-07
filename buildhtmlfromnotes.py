@@ -106,7 +106,12 @@ def generate_all_html(concepts_list):
       <h2>''' + concept[0] + '''</h2>
     </div>
     <div>
-      <P>''' + concept[2] + '''</P>
+      <P>''' + concept[2] 
+            if concept[2].find("**") != -1:
+                all_html += "</ul>"
+            else:
+                all_html += "</p>"
+            all_html += '''
     </div>
   </div>
   <div class="imagetoright">
@@ -123,13 +128,17 @@ def generate_all_html(concepts_list):
       <h2>''' + concept[0] + '''</h2>
     </div>
     <div>
-      <P>''' + concept[2] + '''</P>
+      <P>''' + concept[2]
+            if concept[2].find("**") != -1:
+                all_html += "</ul>"
+            else:
+                all_html += "</p>"
+            all_html += '''
     </div>
   </div>
 </div>'''
         text_left = not text_left
     all_html += '''
-    </div>
 
 </body>
 
