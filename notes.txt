@@ -70,4 +70,4 @@ There are lots of things:
 ** Class, Instance = the specific instance of the class created in memory, Constructor = the initialization routine run in the class that builds the instance in memory, Self = reference to the instance itself, Instance variables = the various items inside the class that can be returned when the class is referenced, Instance methods = functions referenced inside the class, class variables = variables that are global across the class including all functions inside (but don't exist outside the class), method overriding = when the child class uses the same method name as the parent, it supersedes. 
 ** Style guide dictates Title cap for class names, ALL_CAPS for constants.
 ** Some predefined variables: __name__ returns name of running module, __module__ returns the modules name, __doc__ returns the functions docstring bounded on either side by '''
-** An example of using various classes: <A HREF="fresh_tomatoes.html">link</A>
+** An example of using various classes: <A HREF="you_tubers.html">link</A>

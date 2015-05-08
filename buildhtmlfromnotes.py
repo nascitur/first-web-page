@@ -13,6 +13,8 @@ Generates W3C-friendly HTML document from notes text file.
 # Import necessary modules
 
 import getimageinfo
+import videos
+import youtubers
 
 
 # This reads the notes text file and turns the title, image, and section text
@@ -181,6 +183,14 @@ def write_html_to_file(all_html, output_file):
         openedfile.write(all_html)
     print "HTML generated to" + output_file
 
+
+# Generate youtube videos page
+def make_youtubers():
+    vid1 = videos.Video("https://www.youtube.com/watch?v=sGHAxbSEBZs")
+    vid2 = videos.Video("https://www.youtube.com/watch?v=sGHAxbSEBZs")
+    vidlist = [vid1, vid2]
+    youtubers.write_movies_page(vidlist)
+
 # Main function
 
 def main():
@@ -188,6 +198,7 @@ def main():
     concepts_list = read_notes_into_list("notes.txt")
     all_html = generate_all_html(concepts_list)
     write_html_to_file(all_html, "classnotesbuilt.html")
+    make_youtubers()
 
 # Do main
 
