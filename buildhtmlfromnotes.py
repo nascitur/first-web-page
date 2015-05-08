@@ -187,8 +187,10 @@ def write_html_to_file(all_html, output_file):
 # Generate youtube videos page
 def make_youtubers():
     vid1 = videos.Video("https://www.youtube.com/watch?v=sGHAxbSEBZs")
-    vid2 = videos.Video("https://www.youtube.com/watch?v=sGHAxbSEBZs")
-    vidlist = [vid1, vid2]
+    vid2 = videos.Video("https://www.youtube.com/watch?v=J---aiyznGQ")
+    vid3 = videos.Video("https://www.youtube.com/watch?v=dMH0bHeiRNg")
+    vid4 = videos.Video("https://www.youtube.com/watch?v=txqiwrbYGrs")
+    vidlist = [vid1, vid2, vid3, vid4]
     youtubers.write_movies_page(vidlist)
 
 # Main function
