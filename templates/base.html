@@ -1,0 +1,27 @@
+<!doctype html>
+
+{% block pagecomment %}{% endblock pagecomment%}
+
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+    {% block head %}
+    <link rel="stylesheet" type="text/css" href={% block stylesheet %}{* endblock stylesheet %} />
+    <title>{% block pagename %}{% endblock %}</title>
+    {% endblock head%}
+</head>
+
+<body>
+
+  <!-- PAGE TITLE -->
+
+<div class="title">
+    <h1 class="pagetitle">{% block title %}{% endblock title %}
+</div>
+
+{% block content %}{% endblock content %}
+
+</body>
+
+</html>

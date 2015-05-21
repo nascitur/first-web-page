@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+
+{% block pagecomment %}
+  <!-- classnotes.html -->
+
+  <!-- I decided to try to use some cues from other pages, sort of an article flow or corporate About page style-->
+{% endblock pagecomment%}
+{% block stylesheet -%}
+    "classnotes.css"
+{* endblock stylesheet %}
+{% block title -%}
+    <h1 class="pagetitle">Class notes from <strong class="keyword">Intro to Programming</strong></h1>
+{% endblock title %}
+{% block content %}
+
+<div class="section">
+  <div class="imagetoleft">
+    {}
+  </div>
+  <div class="section-texttoright">
+    <div class="sectiontitle">
+      <h2> {} </h2>
+    </div>
+    <div>
+      <P> {} </p>
+    </div>
+  </div>
+</div>
+<div class="section">
+  <div class="section-texttoleft">
+    <div class="sectiontitle">
+      <h2> {} </h2>
+    </div>
+    <div>
+      <P> {} </p>
+    </div>
+    <div class="bulletlist">
+      <ul>
+      </ul>
+    </div>
+  </div>
+  <div class="imagetoright">
+    {}
+  </div>
+</div>
+
+
+{% endblock %}

@@ -15,6 +15,10 @@ Generates W3C-friendly HTML document from notes text file.
 import getimageinfo
 import videos
 import youtubers
+import jinja2
+import os
+import cgi
+import webapp2
 
 
 # This reads the notes text file and turns the title, image, and section text
