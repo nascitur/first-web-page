@@ -6,8 +6,8 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="stylesheet" type="text/css" href={% block stylesheet %}{% endblock stylesheet %} />
-  <title>{% block pagename %}{% endblock pagename %}</title>
+  <link rel="stylesheet" type="text/css" href={% block stylesheet -%}{% endblock stylesheet -%} />
+  <title>{% block pagename -%}{% endblock pagename -%}</title>
 </head>
 
 <body>
@@ -15,7 +15,7 @@
   <!-- PAGE TITLE -->
 
 <div class="title">
-    <h1 class="pagetitle">{% block title %}{% endblock title %}
+    <h1 class="pagetitle">{% block title -%}{% endblock title -%}
 </div>
 
 {% block content %}{% endblock content %}

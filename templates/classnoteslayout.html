@@ -5,18 +5,18 @@
   <!-- I decided to try to use some cues from other pages, sort of an
   article flow or corporate About page style-->
 {% endblock pagecomment %}
-{% block stylesheet %}
+{% block stylesheet -%}
     "classnotes.css"
-{% endblock stylesheet %}
-{% block pagename %}
+{% endblock stylesheet -%}
+{% block pagename -%}
     "Intro to Programming"
-{% endblock pagename %}
-{% block title %}
+{% endblock pagename -%}
+{% block title -%}
     <h1 class="pagetitle">Class notes from <strong class="keyword">Intro to Programming</strong></h1>
-{% endblock title %}
+{% endblock title -%}
 {% block content %}
-  {% for concept in concepts_list %}
-    {% if concept[3] %}
+  {% for concept in concepts_list -%}
+    {% if concept[3] -%}
 <div class="section">
   <div class="section-texttoleft">
     <div class="sectiontitle">
@@ -30,7 +30,7 @@
     {{ concept[1]|safe }}
   </div>
 </div>
-    {% else %}
+    {% else -%}
 <div class="section">
   <div class="imagetoleft">
     {{ concept[1]|safe }}
