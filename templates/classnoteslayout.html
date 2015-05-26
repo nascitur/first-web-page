@@ -1,49 +1,49 @@
 {% extends "base.html" %}
-
-
 {% block pagecomment %}
   <!-- classnotes.html -->
 
-  <!-- I decided to try to use some cues from other pages, sort of an article flow or corporate About page style-->
-{% endblock pagecomment%}
+  <!-- I decided to try to use some cues from other pages, sort of an
+  article flow or corporate About page style-->
+{% endblock pagecomment %}
 {% block stylesheet -%}
     "classnotes.css"
 {* endblock stylesheet %}
 {% block title -%}
     <h1 class="pagetitle">Class notes from <strong class="keyword">Intro to Programming</strong></h1>
 {% endblock title %}
-{% block content %}
-
-<div class="section">
-  <div class="imagetoleft">
-    {}
-  </div>
-  <div class="section-texttoright">
-    <div class="sectiontitle">
-      <h2> {} </h2>
-    </div>
-    <div>
-      <P> {} </p>
-    </div>
-  </div>
-</div>
+<!-- {% block content %}
+  {% for concept in concepts_list %}
+    {% if concept[3] %}
 <div class="section">
   <div class="section-texttoleft">
     <div class="sectiontitle">
-      <h2> {} </h2>
+      <h2> {{ concept[0] }} </h2>
     </div>
     <div>
-      <P> {} </p>
-    </div>
-    <div class="bulletlist">
-      <ul>
-      </ul>
+      <P> {{ concept[2] }}
     </div>
   </div>
   <div class="imagetoright">
-    {}
+    {{ concept[1] }}
   </div>
 </div>
+    {% else %}
+<div class="section">
+  <div class="imagetoleft">
+    {{ concept[1] }}
+  </div>
+  <div class="section-texttoright">
+    <div class="sectiontitle">
+      <h2> {{ concept[0] }} </h2>
+    </div>
+    <div>
+      <P> {{ concept[2] }} </p>
+    </div>
+  </div>
+</div>
+    {% endif %}
+  {% endfor %}
+{% endblock %} -->
 
 
-{% endblock %}
+

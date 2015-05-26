@@ -6,10 +6,8 @@
 
 <head>
   <meta charset="UTF-8" />
-    {% block head %}
-    <link rel="stylesheet" type="text/css" href={% block stylesheet %}{* endblock stylesheet %} />
-    <title>{% block pagename %}{% endblock %}</title>
-    {% endblock head%}
+  <link rel="stylesheet" type="text/css" href={% block stylesheet -%}{* endblock stylesheet %} />
+  <title>{% block pagename -%}{% endblock pagename %}</title>
 </head>
 
 <body>
@@ -25,3 +23,5 @@
 </body>
 
 </html>
+
+{% endblock %}

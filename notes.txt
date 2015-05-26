@@ -87,7 +87,6 @@ Notes:
 ** Validation: you always have to validate parameters submitted to your server - don't rely on control at the front end such as forms, because this could be bypassed.  One particularly easy attack is to put HTML into your form, so you have to be ready for that by using escape characters.
 ** Escape characters: &quot; = ", &gt; = >; &lt; = <, &amp; = &
 
-
 Forms in html
 images/tpsreport.png "TPS Report"
 Forms are powerful and super great:
@@ -108,4 +107,3 @@ More fun python:
 ** Template tips: minimize html in code (or zero) and minimize code in html (not zero) and always use autoescape
 ** Template inheritance lets you combine templates... this is super great for adding stuff you have on multiple page like headers.
 ** Templates pros: more readable code, more code re-use, more security, easier, easier to modify html
-
