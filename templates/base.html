@@ -1,13 +1,13 @@
 <!doctype html>
 
-{% block pagecomment %}{% endblock pagecomment%}
+{% block pagecomment %}{% endblock pagecomment %}
 
 <html>
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="stylesheet" type="text/css" href={% block stylesheet -%}{* endblock stylesheet %} />
-  <title>{% block pagename -%}{% endblock pagename %}</title>
+  <link rel="stylesheet" type="text/css" href={% block stylesheet %}{% endblock stylesheet %} />
+  <title>{% block pagename %}{% endblock pagename %}</title>
 </head>
 
 <body>
@@ -24,4 +24,3 @@
 
 </html>
 
-{% endblock %}

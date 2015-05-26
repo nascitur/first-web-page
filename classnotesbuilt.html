@@ -1,16 +1,22 @@
-
 <!doctype html>
+
 
   <!-- classnotes.html -->
 
-  <!-- I decided to try to use some cues from other pages, sort of an article flow or corporate About page style-->
+  <!-- I decided to try to use some cues from other pages, sort of an
+  article flow or corporate About page style-->
+
 
 <html>
 
 <head>
   <meta charset="UTF-8" />
-  <title>Class notes from the first lesson</title>
-  <link rel="stylesheet" href="classnotes.css" type="text/css" />
+  <link rel="stylesheet" type="text/css" href=
+    "classnotes.css"
+ />
+  <title>
+    "Intro to Programming"
+</title>
 </head>
 
 <body>
@@ -18,100 +24,118 @@
   <!-- PAGE TITLE -->
 
 <div class="title">
+    <h1 class="pagetitle">
     <h1 class="pagetitle">Class notes from <strong class="keyword">Intro to Programming</strong></h1>
+
 </div>
+
+
+  
+    
 <div class="section">
   <div class="imagetoleft">
     <img src="images/bronze-dragon.jpg" alt="Picture of Dragon" style="width:400px;height:330px">
   </div>
   <div class="section-texttoright">
     <div class="sectiontitle">
-      <h2>Structure</h2>
+      <h2> Structure </h2>
     </div>
     <div>
-      <P>What a user sees on a website is their browser's interpretation of an HTML document sent to them by the server.  HTML is structured like a tree, each element containing multiple elements that can in turn contain multiple elements. The importance of structure is typical for computer code as it helps you convey to the stupid-literal computer what you're trying to do, though the details vary for each language.  In HTML the tree structure is typically shown in the code by indenting child elements.  Some of these elements define blocks, others are inline, and some paragraphs, lists, <a href="https://www.youtube.com/watch?v=cbP2N1BQdYc">links</a> and images like the sweet dragon to the left.</p>
+      <P> What a user sees on a website is their browser&#39;s interpretation of an HTML document sent to them by the server.  HTML is structured like a tree, each element containing multiple elements that can in turn contain multiple elements. The importance of structure is typical for computer code as it helps you convey to the stupid-literal computer what you&#39;re trying to do, though the details vary for each language.  In HTML the tree structure is typically shown in the code by indenting child elements.  Some of these elements define blocks, others are inline, and some paragraphs, lists, &lt;a href=&#34;https://www.youtube.com/watch?v=cbP2N1BQdYc&#34;&gt;links&lt;/a&gt; and images like the sweet dragon to the left. </p>
     </div>
   </div>
 </div>
+    
+  
+    
 <div class="section">
   <div class="section-texttoleft">
     <div class="sectiontitle">
-      <h2>Style</h2>
+      <h2> Style </h2>
     </div>
     <div>
-      <P>The second lesson introduced stylesheets which are pretty mindblowing and give you huge power to customize how your site looks. The HTML defines the structure and content and the CSS defines the form and style.  While everything in HTML is based on boxes, with style sheets you can really make your page look like whatever you want. I was stuck on a plane during this section so I ended up picking apart a nice cached site and stealing elements of their layout.  I learned:
+      <P> The second lesson introduced stylesheets which are pretty mindblowing and give you huge power to customize how your site looks. The HTML defines the structure and content and the CSS defines the form and style.  While everything in HTML is based on boxes, with style sheets you can really make your page look like whatever you want. I was stuck on a plane during this section so I ended up picking apart a nice cached site and stealing elements of their layout.  I learned:
     </div>
     <div class="bulletlist">
       <ul>
         <li> CSS is cascading, with the most specific element having the most power. Structure is critical both in HTML and CSS and how they link together 
-        <li> Part of the main point of CSS is creating styles you can re-use, ie rather than repeatedly declaring the same font/margin/etc over and over you can define it once (for example, as a "class") and then point to it whenever you want.  Re-use prevents mistakes, saves time,and improves consistency. 
-        <li> You seem to be able to combine styles for example span class="greenttext boldtext" would make <span class="greentext boldtext">green bold text</span>:<pre class="codesample">.greentext {   color: green; } .boldtext {   font-weight: bold; }</pre> 
-        <li> Each "box" on a website has layers like an onion from the inside to the outside: content, padding, border, margin. There are lots of rules for style inheritance but rather than pretending to remember : use the little box in "Developer Tools" to experiment. Another key point: CODE->TEST->REFINE 
-        <li> Helvetica. 'nuff said</ul>
+        <li> Part of the main point of CSS is creating styles you can re-use, ie rather than repeatedly declaring the same font/margin/etc over and over you can define it once (for example, as a &#34;class&#34;) and then point to it whenever you want.  Re-use prevents mistakes, saves time,and improves consistency. 
+        <li> You seem to be able to combine styles for example span class=&#34;greenttext boldtext&#34; would make &lt;span class=&#34;greentext boldtext&#34;&gt;green bold text&lt;/span&gt;:&lt;pre class=&#34;codesample&#34;&gt;.greentext {   color: green; } .boldtext {   font-weight: bold; }&lt;/pre&gt; 
+        <li> Each &#34;box&#34; on a website has layers like an onion from the inside to the outside: content, padding, border, margin. There are lots of rules for style inheritance but rather than pretending to remember : use the little box in &#34;Developer Tools&#34; to experiment. Another key point: CODE-&gt;TEST-&gt;REFINE 
+        <li> Helvetica. &#39;nuff said&lt;/ul&gt;
     </div>
   </div>
   <div class="imagetoright">
     <img src="images/bHzgKfH3Kps.jpg" alt="Picture of style" style="width:200px;height:500px">
   </div>
 </div>
+    
+  
+    
 <div class="section">
   <div class="imagetoleft">
     <img src="images/matrix.png" alt="The Matrix" style="width:400px;height:261px">
   </div>
   <div class="section-texttoright">
     <div class="sectiontitle">
-      <h2>Talking to Computers</h2>
+      <h2> Talking to Computers </h2>
     </div>
     <div>
-      <P>Computers don't understand natural language primarily because they take things perfectly literally. Programmling languages are designed to bridge the gap between this ultimate literal machine code and something that we humans can understand. Some computer programs are compiled directly into machine code so they can be run as binaries by themselves, while a second style are interpreted, meaning that they require a second program to run by interpreting the code on the spot. Python is an example of this style we'll be using.</p>
+      <P> Computers don&#39;t understand natural language primarily because they take things perfectly literally. Programmling languages are designed to bridge the gap between this ultimate literal machine code and something that we humans can understand. Some computer programs are compiled directly into machine code so they can be run as binaries by themselves, while a second style are interpreted, meaning that they require a second program to run by interpreting the code on the spot. Python is an example of this style we&#39;ll be using. </p>
     </div>
   </div>
 </div>
+    
+  
+    
 <div class="section">
   <div class="section-texttoleft">
     <div class="sectiontitle">
-      <h2>Python Details</h2>
+      <h2> Python Details </h2>
     </div>
     <div>
-      <P>Raw Python commands, similar to many languages:
+      <P> Raw Python commands, similar to many languages:
     </div>
     <div class="bulletlist">
       <ul>
         <li> Variables and numbers: number = 1 + 1 
-        <li> Variables and strings: string = "!" + '!' +'?' 
+        <li> Variables and strings: string = &#34;!&#34; + &#39;!&#39; +&#39;?&#39; 
         <li> String chopping: chopped = string[startposition:endposition] 
-        <li> Lists of anything: list = ['a','n','y','thing!'] 
+        <li> Lists of anything: list = [&#39;a&#39;,&#39;n&#39;,&#39;y&#39;,&#39;thing!&#39;] 
         <li> Lists return elements like strings: list[0] 
-        <li> Lists can be expanded with: list.append(newvalue) but this is different than '+' which concatenates the two together... append adds newvalue as a single element 
+        <li> Lists can be expanded with: list.append(newvalue) but this is different than &#39;+&#39; which concatenates the two together... append adds newvalue as a single element 
         <li> REturn length of strings/lists: len(string_or_list) 
-        <li> Printing text math: print "Text" + number * string[1] 
-        <li> Finding position in string: string.find('text',start,end) 
+        <li> Printing text math: print &#34;Text&#34; + number * string[1] 
+        <li> Finding position in string: string.find(&#39;text&#39;,start,end) 
         <li> Finding if something in list (true/false): value in list 
-        <li> Quotes: "" '' nested and valid, """""" for multiple lines 
+        <li> Quotes: &#34;&#34; &#39;&#39; nested and valid, &#34;&#34;&#34;&#34;&#34;&#34; for multiple lines 
         <li> Functions: def functionname(passtovariable):     [do stuff with passtovariable]     return stuff next command 
-        <li> While (keeps doing stuff while true):<pre class="codesample"> while [truefalsetest]:     [do something when true]     [do something next when true]     [break escapes while loop] next command</pre> 
-        <li> IfThenElse (does one thing if true and another if false):<pre class="codesample"> if [truefalsetest]:     [do something when true or return True] else:     [do something when false or return False] next command</pre> Other concepts that will be useful... 
-        <li> Use triple quotes to do several lines like pre """ text on other lines """ 
+        <li> While (keeps doing stuff while true):&lt;pre&gt; while [truefalsetest]:     [do something when true]     [do something next when true]     [break escapes while loop] next command&lt;/pre&gt; 
+        <li> IfThenElse (does one thing if true and another if false):&lt;pre&gt; if [truefalsetest]:     [do something when true or return True] else:     [do something when false or return False] next command&lt;/pre&gt; Other concepts that will be useful... 
+        <li> Use triple quotes to do several lines like pre &#34;&#34;&#34; text on other lines &#34;&#34;&#34; 
         <li> Use positive/negative string indexes to separate tags from text, ie innertext = tagstring[5,-6] 
         <li> Def makes a function that can be used later by calling its name and passing data as an input. 
         <li> Return defines the output of a function, without which the function does nothing. 
-        <li> Aliasing can be useful but also cause bugs... this occurs when two variables refer to the same object in memory, for example when you say var1 = var2, and then the underlying object changes, resulting in changes to both vars.</ul>
+        <li> Aliasing can be useful but also cause bugs... this occurs when two variables refer to the same object in memory, for example when you say var1 = var2, and then the underlying object changes, resulting in changes to both vars.&lt;/ul&gt;
     </div>
   </div>
   <div class="imagetoright">
     <img src="images/python.jpg" alt="Python" style="width:400px;height:273px">
   </div>
 </div>
+    
+  
+    
 <div class="section">
   <div class="imagetoleft">
     <img src="images/stealing.jpg" alt="Stealing is cool" style="width:400px;height:430px">
   </div>
   <div class="section-texttoright">
     <div class="sectiontitle">
-      <h2>Slightly more serious programming</h2>
+      <h2> Slightly more serious programming </h2>
     </div>
     <div>
-      <P>There are lots of things:
+      <P> There are lots of things:
     </div>
     <div class="bulletlist">
       <ul>
@@ -119,73 +143,82 @@
         <li> Importing fundctions from the Python standard library allows you to use functions made for us without having to know how they work: ie, abstraction 
         <li> Functions are useful, stealing code is useful 
         <li> Functions are not enough - when you have a lot of arguments, or would require lots of customized functions, it would be better to have a template of some kind... thats what a class is.  When you declare a Name = Classname, it creates an instance in memory of Class with name Name. 
-        <li> You can import pieces of a class instead of just the whole class using "from" and this keeps you from having to essnetially write the whole directory structure with each function call. 
+        <li> You can import pieces of a class instead of just the whole class using &#34;from&#34; and this keeps you from having to essnetially write the whole directory structure with each function call. 
         <li> urllib helps you interact with the internet 
-        <li> Class, Instance = the specific instance of the class created in memory, Constructor = the initialization routine run in the class that builds the instance in memory, Self = reference to the instance itself, Instance variables = the various items inside the class that can be returned when the class is referenced, Instance methods = functions referenced inside the class, class variables = variables that are global across the class including all functions inside (but don't exist outside the class), method overriding = when the child class uses the same method name as the parent, it supersedes. 
+        <li> Class, Instance = the specific instance of the class created in memory, Constructor = the initialization routine run in the class that builds the instance in memory, Self = reference to the instance itself, Instance variables = the various items inside the class that can be returned when the class is referenced, Instance methods = functions referenced inside the class, class variables = variables that are global across the class including all functions inside (but don&#39;t exist outside the class), method overriding = when the child class uses the same method name as the parent, it supersedes. 
         <li> Style guide dictates Title cap for class names, ALL_CAPS for constants. 
-        <li> Some predefined variables: __name__ returns name of running module, __module__ returns the modules name, __doc__ returns the functions docstring bounded on either side by ''' 
-        <li> An example of using various classes by creating a cool embedded youtube video site: <A HREF="you_tubers.html">VISIT YOUTUBERS!</A></ul>
+        <li> Some predefined variables: __name__ returns name of running module, __module__ returns the modules name, __doc__ returns the functions docstring bounded on either side by &#39;&#39;&#39; 
+        <li> An example of using various classes by creating a cool embedded youtube video site: &lt;A HREF=&#34;you_tubers.html&#34;&gt;VISIT YOUTUBERS!&lt;/A&gt;&lt;/ul&gt; </p>
     </div>
   </div>
 </div>
+    
+  
+    
 <div class="section">
   <div class="section-texttoleft">
     <div class="sectiontitle">
-      <h2>Putting up a website</h2>
+      <h2> Putting up a website </h2>
     </div>
     <div>
-      <P>Notes:
+      <P> Notes:
     </div>
     <div class="bulletlist">
       <ul>
         <li> Network = a group of entities that can communicate even if not directly connected.  Measured by latency (time takes from source send to dest receive), and bandwith (amount of info you can transfer per unit time).  Bits are 0/1.  Protocol 
-        <li> Url: address on the web that can include protocol, host, port, path, queries, and fragments.  Add query parameters (GET) to make requests, with ?param1&param2.  Add fragments (#) to jump to a specific item within the browser.  Add port number with :portnum (default is 80). 
+        <li> Url: address on the web that can include protocol, host, port, path, queries, and fragments.  Add query parameters (GET) to make requests, with ?param1&amp;param2.  Add fragments (#) to jump to a specific item within the browser.  Add port number with :portnum (default is 80). 
         <li> Interacting with the server: GET and POST.  Example: GET /path/queries? http/1.1 is what your browser uses to get page from the server.  post is the other way.  Often follows with other header items: GET, then Host:, then User agent:. 
         <li> Headers are of teh form Item: metadata 
         <li> User agents identify your browser. 
         <li> More on the interaction: Client issues GET request, then server responds with status line http/1.1 code reason (like http/1.1 200 ok).  Codes: 200 = ok, 302 = found, 404 = not found (client error), 500 server error.  2 generally means good, 3 means some edit, 4 means client error, 5 means server error.  Http responses also have headers. 
         <li> Two classes of content: statis and dynamic.  Static just returns document that exists.  Most content now is dynamic being generated by a program (web app). 
-        <li> Great shortcut is to use Google's appengine which lets you run things on a webserver locally or push to a free site in the cloud. 
-        <li> GET vs POST: Parameters in URL vs body, used to fetch documents vs updating server data, max url length vs no max, ok to cache vs not ok, shouldnt change server vs ok to change.  Definitely don't use GET for data modification, just for fetching documents. 
-        <li> Validation: you always have to validate parameters submitted to your server - don't rely on control at the front end such as forms, because this could be bypassed.  One particularly easy attack is to put HTML into your form, so you have to be ready for that by using escape characters. 
-        <li> Escape characters: &quot; = ", &gt; = >; &lt; = <, &amp; = &</ul>
+        <li> Great shortcut is to use Google&#39;s appengine which lets you run things on a webserver locally or push to a free site in the cloud. 
+        <li> GET vs POST: Parameters in URL vs body, used to fetch documents vs updating server data, max url length vs no max, ok to cache vs not ok, shouldnt change server vs ok to change.  Definitely don&#39;t use GET for data modification, just for fetching documents. 
+        <li> Validation: you always have to validate parameters submitted to your server - don&#39;t rely on control at the front end such as forms, because this could be bypassed.  One particularly easy attack is to put HTML into your form, so you have to be ready for that by using escape characters. 
+        <li> Escape characters: &amp;quot; = &#34;, &amp;gt; = &gt;; &amp;lt; = &lt;, &amp;amp; = &amp;&lt;/ul&gt;
     </div>
   </div>
   <div class="imagetoright">
     <img src="images/buildsite.jpg" alt="Building a website" style="width:400px;height:276px">
   </div>
 </div>
+    
+  
+    
 <div class="section">
   <div class="imagetoleft">
     <img src="images/tpsreport.png" alt="TPS Report" style="width:400px;height:516px">
   </div>
   <div class="section-texttoright">
     <div class="sectiontitle">
-      <h2>Forms in html</h2>
+      <h2> Forms in html </h2>
     </div>
     <div>
-      <P>Forms are powerful and super great:
+      <P> Forms are powerful and super great:
     </div>
     <div class="bulletlist">
       <ul>
-        <li> Redirection: so you can link to the results of a form submission and also not have to do the resubmit when you press back - instead of responding to post with content, respond with redirect that provokes another GET.</ul>
+        <li> Redirection: so you can link to the results of a form submission and also not have to do the resubmit when you press back - instead of responding to post with content, respond with redirect that provokes another GET.&lt;/ul&gt; </p>
     </div>
   </div>
 </div>
+    
+  
+    
 <div class="section">
   <div class="section-texttoleft">
     <div class="sectiontitle">
-      <h2>More python</h2>
+      <h2> More python </h2>
     </div>
     <div>
-      <P>More fun python:
+      <P> More fun python:
     </div>
     <div class="bulletlist">
       <ul>
         <li> Modulous 
         <li> Dictionaries 
-        <li> %s subsitution: "Sub %s in a string %s" % ('something','now') 
-        <li> complex subsitution "Sub %(sub1)s for %(sub2)s here" % {'sub1':'Bob','sub2':'Fred'} 
+        <li> %s subsitution: &#34;Sub %s in a string %s&#34; % (&#39;something&#39;,&#39;now&#39;) 
+        <li> complex subsitution &#34;Sub %(sub1)s for %(sub2)s here&#34; % {&#39;sub1&#39;:&#39;Bob&#39;,&#39;sub2&#39;:&#39;Fred&#39;} 
         <li> The problem is, all this html string sitting around in your python is ugly, error prone, and painful.  Instead, use html templates. 
         <li> __file__ is the file being run 
         <li> * *params is python term for extra parameters 
@@ -193,13 +226,16 @@
         <li> jinja has autoescape = true or pipe to escape or pipe to safe 
         <li> Template tips: minimize html in code (or zero) and minimize code in html (not zero) and always use autoescape 
         <li> Template inheritance lets you combine templates... this is super great for adding stuff you have on multiple page like headers. 
-        <li> Templates pros: more readable code, more code re-use, more security, easier, easier to modify html</ul>
+        <li> Templates pros: more readable code, more code re-use, more security, easier, easier to modify html&lt;/ul&gt;
     </div>
   </div>
   <div class="imagetoright">
     <img src="images/python2.png" alt="Python language" style="width:400px;height:400px">
   </div>
 </div>
+    
+  
+
 
 </body>
 

@@ -97,106 +97,7 @@ def tag_image(file_name, alt_string, max_width):
 
 # From the concepts list, Generate all HTML into a big string
 
-def generate_all_html(concepts_list):
-    """
-    Outputs a string of HTML build from inputted concepts_list
-    """
-    text_left = False
-
-# #TODO: put template stuff here
-#     all_html = notes_template.render(concepts_list=concepts_list, 
-#                                      text_left=text_left)
-
-
-#TODO: coment out all the below stuff through the next
-    all_html = '''
-<!doctype html>
-
-  <!-- classnotes.html -->
-
-  <!-- I decided to try to use some cues from other pages, sort of an article flow or corporate About page style-->
-
-<html>
-
-<head>
-  <meta charset="UTF-8" />
-  <title>Class notes from the first lesson</title>
-  <link rel="stylesheet" href="classnotes.css" type="text/css" />
-</head>
-
-<body>
-
-  <!-- PAGE TITLE -->
-
-<div class="title">
-    <h1 class="pagetitle">Class notes from <strong class="keyword">Intro to Programming</strong></h1>
-</div>'''
-    for concept in concepts_list:
-        print concept[0]
-        print concept[1]
-
-        all_html += '''
-<div class="section">'''
-        if text_left:
-            all_html += '''
-  <div class="section-texttoleft">
-    <div class="sectiontitle">
-      <h2>''' + concept[0] + '''</h2>
-    </div>
-    <div>
-      <P>''' + concept[2]
-            if concept[2].find("**") != -1:
-                all_html += "</ul>"
-            else:
-                all_html += "</p>"
-            all_html += '''
-    </div>
-  </div>
-  <div class="imagetoright">
-    ''' + concept[1] + '''
-  </div>
-</div>'''
-        else:
-            all_html += '''
-  <div class="imagetoleft">
-    ''' + concept[1] + '''
-  </div>
-  <div class="section-texttoright">
-    <div class="sectiontitle">
-      <h2>''' + concept[0] + '''</h2>
-    </div>
-    <div>
-      <P>''' + concept[2]
-            if concept[2].find("**") != -1:
-                all_html += "</ul>"
-            else:
-                all_html += "</p>"
-            all_html += '''
-    </div>
-  </div>
-</div>'''
-        text_left = not text_left
-    all_html += '''
-
-</body>
-
-</html>'''
-
-#TODO: this part should all be the same?
-
-    all_html = all_html.replace(': **', ''':
-    </div>
-    <div class="bulletlist">
-      <ul>
-        <li>''')
-    all_html = all_html.replace('**', '''
-        <li>''')
-    all_html = all_html.replace('<pre>', '<pre class="codesample">')
-    return all_html
-
-# From the concepts list, Generate all HTML into a big string
-
-def generate_all_html2(concepts_list, template):
+def generate_all_html(concepts_list, template):
     """
     Outputs a string of HTML build from inputted concepts_list
     """
@@ -243,8 +144,8 @@ def main():
     ''' Reads the specified notes file and outputs it as a new HTML file'''
     template = load_templates("classnoteslayout.html")
     concepts_list = read_notes_into_list("notes.txt", 400)
-    all_html = generate_all_html2(concepts_list, template)
-    write_html_to_file(all_html)
+    all_html = generate_all_html(concepts_list, template)
+    write_html_to_file(all_html,"classnotesbuilt.html")
 #TODO this doesnt work if you dont have internet.  
 # Thanks SoutheWest Airlines for helping me find that bug
 #    make_youtubers()
