@@ -17,6 +17,7 @@
 {% block content %}
   {% for concept in concepts_list -%}
     {% if concept[3] -%}
+<br>
 <div class="section">
   <div class="section-texttoleft">
     <div class="sectiontitle">
@@ -31,6 +32,7 @@
   </div>
 </div>
     {% else -%}
+<br>
 <div class="section">
   <div class="imagetoleft">
     {{ concept[1]|safe }}
