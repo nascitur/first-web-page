@@ -23,7 +23,7 @@
       <h2> {{ concept[0] }} </h2>
     </div>
     <div>
-      <P> {{ concept[2] }}
+      <P> {{ concept[2]|safe }}
     </div>
   </div>
   <div class="imagetoright">
@@ -40,7 +40,7 @@
       <h2> {{ concept[0] }} </h2>
     </div>
     <div>
-      <P> {{ concept[2] }} </p>
+      <P> {{ concept[2]|safe }} </p>
     </div>
   </div>
 </div>

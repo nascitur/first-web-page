@@ -55,6 +55,7 @@ main_page_head = '''
         }
     </style>
     <script type="text/javascript" charset="utf-8">
+      try {
         // Pause the video when the modal is closed
         $(document).on('click', '.hanging-close, .modal-backdrop, .modal', function (event) {
             // Remove the src so the player itself gets removed, as this is the only
@@ -78,6 +79,7 @@ main_page_head = '''
             $(this).next("div").show("fast", showNext);
           });
         });
+      }
     </script>
 </head>
 '''

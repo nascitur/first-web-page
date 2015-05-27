@@ -21,6 +21,9 @@ import cgi
 #import webapp2
 
 def load_templates(template_name):
+    """
+    Load the templates for jinja2 rendering
+    """
     templat_dir = os.path.join(os.path.dirname(__file__),'templates')
     jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(templat_dir),
                                    autoescape = True)
@@ -55,7 +58,6 @@ def read_notes_into_list(notesfilename, max_width):
         this_sect[1] = parse_image_text(this_sect[1], max_width)
         notes_list.append(this_sect)
     return notes_list
-
 
 # Image text line in the notes file could be messy, this parses it and returns
 # a 2 element list of [image file string, image alt text]
@@ -128,8 +130,8 @@ def write_html_to_file(all_html, output_file):
         openedfile.write(all_html)
     print "HTML generated to" + output_file
 
-
 # Generate youtube videos page
+
 def make_youtubers():
     vid1 = videos.Video("https://www.youtube.com/watch?v=sGHAxbSEBZs")
     vid2 = videos.Video("https://www.youtube.com/watch?v=J---aiyznGQ")
@@ -146,9 +148,9 @@ def main():
     concepts_list = read_notes_into_list("notes.txt", 400)
     all_html = generate_all_html(concepts_list, template)
     write_html_to_file(all_html,"classnotesbuilt.html")
-#TODO this doesnt work if you dont have internet.  
+#TODO the javascript for youtubers doesnt work without internet.  
 # Thanks SoutheWest Airlines for helping me find that bug
-#    make_youtubers()
+    make_youtubers()
 
 # Do main
 
