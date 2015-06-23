@@ -44,8 +44,9 @@ def read_notes_into_list(notesfilename, max_width):
     j = 0
     with open(notesfilename, 'r') as openedfile:
 # TODO: Add a double-line removal or handler to prevent breakage
+        lastline = ''
         for line in openedfile:
-            if line in ['\n', '\r\n']:
+            if line in ['\n', '\r\n'] and line != lastline:
                 this_sect[1] = parse_image_text(this_sect[1], max_width)
                 notes_list.append(this_sect)
                 this_sect = []
@@ -55,6 +56,7 @@ def read_notes_into_list(notesfilename, max_width):
             else:
                 this_sect.append(line.rstrip())
                 j += 1
+            lastline = line
         this_sect[1] = parse_image_text(this_sect[1], max_width)
         notes_list.append(this_sect)
     return notes_list
@@ -133,7 +135,7 @@ def write_html_to_file(all_html, output_file):
 # Generate youtube videos page
 
 def make_youtubers():
-    vid1 = videos.Video("https://www.youtube.com/watch?v=sGHAxbSEBZs")
+    vid1 = videos.Video("https://www.youtube.com/watch?v=W45DRy7M1no")
     vid2 = videos.Video("https://www.youtube.com/watch?v=J---aiyznGQ")
     vid3 = videos.Video("https://www.youtube.com/watch?v=dMH0bHeiRNg")
     vid4 = videos.Video("https://www.youtube.com/watch?v=txqiwrbYGrs")

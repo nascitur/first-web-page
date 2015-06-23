@@ -26,7 +26,8 @@
 </div>
 
 
-  <div class="section">
+  <br>
+<div class="section">
   <div class="imagetoleft">
     <img src="images/bronze-dragon.jpg" alt="Picture of Dragon" style="width:400px;height:330px">
   </div>
@@ -40,7 +41,8 @@
   </div>
 </div>
     
-  <div class="section">
+  <br>
+<div class="section">
   <div class="section-texttoleft">
     <div class="sectiontitle">
       <h2> Style </h2>
@@ -62,7 +64,8 @@
   </div>
 </div>
     
-  <div class="section">
+  <br>
+<div class="section">
   <div class="imagetoleft">
     <img src="images/matrix.png" alt="The Matrix" style="width:400px;height:261px">
   </div>
@@ -76,7 +79,8 @@
   </div>
 </div>
     
-  <div class="section">
+  <br>
+<div class="section">
   <div class="section-texttoleft">
     <div class="sectiontitle">
       <h2> Python Details </h2>
@@ -90,6 +94,7 @@
         <li> Variables and strings: string = "!" + '!' +'?' 
         <li> String chopping: chopped = string[startposition:endposition] 
         <li> Lists of anything: list = ['a','n','y','thing!'] 
+        <li> Dictionary list: dictionary = {name1:item1, name2:item2} 
         <li> Lists return elements like strings: list[0] 
         <li> Lists can be expanded with: list.append(newvalue) but this is different than '+' which concatenates the two together... append adds newvalue as a single element 
         <li> REturn length of strings/lists: len(string_or_list) 
@@ -112,7 +117,8 @@
   </div>
 </div>
     
-  <div class="section">
+  <br>
+<div class="section">
   <div class="imagetoleft">
     <img src="images/stealing.jpg" alt="Stealing is cool" style="width:400px;height:430px">
   </div>
@@ -139,7 +145,8 @@
   </div>
 </div>
     
-  <div class="section">
+  <br>
+<div class="section">
   <div class="section-texttoleft">
     <div class="sectiontitle">
       <h2> Putting up a website </h2>
@@ -167,7 +174,8 @@
   </div>
 </div>
     
-  <div class="section">
+  <br>
+<div class="section">
   <div class="imagetoleft">
     <img src="images/tpsreport.png" alt="TPS Report" style="width:400px;height:516px">
   </div>
@@ -185,7 +193,8 @@
   </div>
 </div>
     
-  <div class="section">
+  <br>
+<div class="section">
   <div class="section-texttoleft">
     <div class="sectiontitle">
       <h2> More python </h2>
@@ -206,11 +215,44 @@
         <li> jinja has autoescape = true or pipe to escape or pipe to safe 
         <li> Template tips: minimize html in code (or zero) and minimize code in html (not zero) and always use autoescape 
         <li> Template inheritance lets you combine templates... this is super great for adding stuff you have on multiple page like headers. 
-        <li> Templates pros: more readable code, more code re-use, more security, easier, easier to modify html</ul>
+        <li> Templates pros: more readable code, more code re-use, more security, easier, easier to modify html 
+        <li> Pass tuple parts to a function as arguments: Function(*tuple)</ul>
     </div>
   </div>
   <div class="imagetoright">
     <img src="images/python2.png" alt="Python language" style="width:400px;height:400px">
+  </div>
+</div>
+    
+  <br>
+<div class="section">
+  <div class="imagetoleft">
+    <img src="images/sqlin10min.jpg" alt="Databases" style="width:400px;height:300px">
+  </div>
+  <div class="section-texttoright">
+    <div class="sectiontitle">
+      <h2> Databases </h2>
+    </div>
+    <div>
+      <P> Databases are where lots of structured data is stored:
+    </div>
+    <div class="bulletlist">
+      <ul>
+        <li> Tables provide the structure, with an id at the beginning and then columns of data (to include references to other tables) 
+        <li> Queries by hand are a pain 
+        <li> relational SQL (structured query language) databases: postgresql, mysql, sqlite, oracle 
+        <li> other databases: google appengine datastore, amazon dynamo (very cool), nosql like mongodb 
+        <li> nomenclature for getting data: SELECT [columns or * for all] FROM [table names to pull from] WHERE [constraint, like a test something = something to choose rows] ORDER BY [column] [asc or desc] 
+        <li> Joins allow you to query across multiple tables: SELECT [column.table] FROM [table1, table2] WHERE [constraints about table.column] 
+        <li> But, you don't use joint much in web stuff 
+        <li> Indexes let you refer directly to an entry of interest instead of iterating through an entire database... this increases speed of reads, though decreases writes because you have to update the index. 
+        <li> Count the elements in your table: select count(*) from tablename 
+        <li> Sidebar on postgres stuff: "explain analyze [command]" explains what was done during command and how long it took 
+        <li> Create an index on an existing table: create index indexname on table(field) 
+        <li> Hashtable vs tree: hashtable is faster to lookup (especially as size increases), but isnt sorted. 
+        <li> Reddit front page order: "hotness" is basically a function of vote activity and date... ie older activity is worth less.  Use this as the index. 
+        <li> ACID: Atomicity (all parts of transaction suceed or fail together), Consistency (valid transactions are linked, and can't cause issues elsewhere), Isolation (computations do not affect each other), Durability (once committed, a transaction wont be lost)</ul> </p>
+    </div>
   </div>
 </div>
     

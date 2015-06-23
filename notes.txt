@@ -27,6 +27,7 @@ Raw Python commands, similar to many languages:
 ** Variables and strings: string = "!" + '!' +'?'
 ** String chopping: chopped = string[startposition:endposition]
 ** Lists of anything: list = ['a','n','y','thing!']
+** Dictionary list: dictionary = {name1:item1, name2:item2}
 ** Lists return elements like strings: list[0]
 ** Lists can be expanded with: list.append(newvalue) but this is different than '+' which concatenates the two together... append adds newvalue as a single element
 ** REturn length of strings/lists: len(string_or_list)
@@ -107,3 +108,30 @@ More fun python:
 ** Template tips: minimize html in code (or zero) and minimize code in html (not zero) and always use autoescape
 ** Template inheritance lets you combine templates... this is super great for adding stuff you have on multiple page like headers.
 ** Templates pros: more readable code, more code re-use, more security, easier, easier to modify html
+** Pass tuple parts to a function as arguments: Function(*tuple)
+
+Databases
+images/sqlin10min.jpg "Databases"
+Databases are where lots of structured data is stored:
+** Tables provide the structure, with an id at the beginning and then columns of data (to include references to other tables)
+** Queries by hand are a pain
+** relational SQL (structured query language) databases: postgresql, mysql, sqlite, oracle
+** other databases: google appengine datastore, amazon dynamo (very cool), nosql like mongodb
+** nomenclature for getting data: SELECT [columns or * for all] FROM [table names to pull from] WHERE [constraint, like a test something = something to choose rows] ORDER BY [column] [asc or desc]
+** Joins allow you to query across multiple tables: SELECT [column.table] FROM [table1, table2] WHERE [constraints about table.column]
+** But, you don't use joint much in web stuff
+** Indexes let you refer directly to an entry of interest instead of iterating through an entire database... this increases speed of reads, though decreases writes because you have to update the index.
+** Count the elements in your table: select count(*) from tablename
+** Sidebar on postgres stuff: "explain analyze [command]" explains what was done during command and how long it took
+** Create an index on an existing table: create index indexname on table(field)
+** Hashtable vs tree: hashtable is faster to lookup (especially as size increases), but isnt sorted.
+** Reddit front page order: "hotness" is basically a function of vote activity and date... ie older activity is worth less.  Use this as the index.
+** ACID: Atomicity (all parts of transaction succeed or fail together), Consistency (valid transactions are linked, and can't cause issues elsewhere), Isolation (computations do not affect each other), Durability (once committed, a transaction wont be lost... dont lose data)
+
+Google Datastore
+images/googledatastore.png "Google Datastore"
+The Google Datastore is a powerful database system that was pretty much sprung on us at the end of this lesson with very little explaination.  Its not SQL, per se, though it does allow SQL-like querying called GQL.  Here's what I figured out on my own:
+** Each item in the database is referred to as an "entity", a term basically replacing "row" though without the implied structure of rows in a table, and the closest thing to a "table" is the term "kind"
+** There is no set schema but there is data structure defined with classes invoking ndb.Model, where the class contents define the properties of the data (entityname = ndb.TypeOfProperty(args))
+** You can inspect your datastore contents through the AppEngine SDK console... very useful for troubleshooting.
+
