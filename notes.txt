@@ -63,7 +63,7 @@ Slightly more serious programming
 images/stealing.jpg "Stealing is cool"
 There are lots of things:
 ** Object Oriented Programmaing builds on the idea of lazy programming: maximizing the ability to re-use code by defining classes that can be called, re-used, and inherited.  The objects are instances of this code re-used to do something specific... like a Salmon named Fred.  In retrospect, this is a lot like how we used CSS: repeatedly calling CSS styles that could be layered together by the HTML to create the page.
-** Importing fundctions from the Python standard library allows you to use functions made for us without having to know how they work: ie, abstraction
+** Importing functions from the Python standard library allows you to use functions made for us without having to know how they work: ie, abstraction
 ** Functions are useful, stealing code is useful
 ** Functions are not enough - when you have a lot of arguments, or would require lots of customized functions, it would be better to have a template of some kind... thats what a class is.  When you declare a Name = Classname, it creates an instance in memory of Class with name Name.
 ** You can import pieces of a class instead of just the whole class using "from" and this keeps you from having to essnetially write the whole directory structure with each function call.
@@ -134,4 +134,6 @@ The Google Datastore is a powerful database system that was pretty much sprung o
 ** Each item in the database is referred to as an "entity", a term basically replacing "row" though without the implied structure of rows in a table, and the closest thing to a "table" is the term "kind"
 ** There is no set schema but there is data structure defined with classes invoking ndb.Model, where the class contents define the properties of the data (entityname = ndb.TypeOfProperty(args))
 ** You can inspect your datastore contents through the AppEngine SDK console... very useful for troubleshooting.
+** The Google datastore, apparently like most nosql, isn't strongly consistent unless you use ancestor queries. It is, however, "eventually consistent" which doesn't sound all that impressive in a web context.
+** Use SQL like queries using ndb.gql('SELECT * FROM database WHERE item=:1',whatevercolon1is)
 

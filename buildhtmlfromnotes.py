@@ -10,14 +10,18 @@
 Generates W3C-friendly HTML document from notes text file.
 """
 
-# Import necessary modules
+# Import system modules
+
+import jinja2
+import os
+import cgi
+
+# Import custom modules
 
 import getimageinfo
 import videos
 import youtubers
-import jinja2
-import os
-import cgi
+import pagecomments
 #import webapp2
 
 def load_templates(template_name):
@@ -73,7 +77,6 @@ def parse_image_text(imagetext, max_width):
                         imagetext[imagetext.find(' ')+1:]]
     tagged_image = tag_image(image_filenalt[0], image_filenalt[1], max_width)
     return tagged_image
-
 
 # Deliver appropriate HTML IMG tag string from a filename and the alt tag text
 # It will automagically determine the pixel size
@@ -135,6 +138,9 @@ def write_html_to_file(all_html, output_file):
 # Generate youtube videos page
 
 def make_youtubers():
+    """
+    Generates youtube videos page if youre on the internet
+    """
     vid1 = videos.Video("https://www.youtube.com/watch?v=W45DRy7M1no")
     vid2 = videos.Video("https://www.youtube.com/watch?v=J---aiyznGQ")
     vid3 = videos.Video("https://www.youtube.com/watch?v=dMH0bHeiRNg")
