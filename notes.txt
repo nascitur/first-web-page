@@ -136,4 +136,3 @@ The Google Datastore is a powerful database system that was pretty much sprung o
 ** You can inspect your datastore contents through the AppEngine SDK console... very useful for troubleshooting.
 ** The Google datastore, apparently like most nosql, isn't strongly consistent unless you use ancestor queries. It is, however, "eventually consistent" which doesn't sound all that impressive in a web context.
 ** Use SQL like queries using ndb.gql('SELECT * FROM database WHERE item=:1',whatevercolon1is)
-

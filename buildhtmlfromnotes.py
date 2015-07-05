@@ -148,20 +148,30 @@ def make_youtubers():
     vidlist = [vid1, vid2, vid3, vid4]
     youtubers.write_movies_page(vidlist)
 
-# Main function
+# Page builder
+
+class Page(object):
+    ''' Reads the specified notes file and outputs it as a new HTML file'''
+
+    def __init__(self, all_html):
+        self.all_html = all_html
+
+    def Build(self, all_html):
+        template = load_templates("classnoteslayout.html")
+        concepts_list = read_notes_into_list("notes.txt", 400)
+        all_html = generate_all_html(concepts_list, template)
+        self.all_html = all_html
+        return self.all_html
+
+# Main function if this is a standalone
 
 def main():
-    ''' Reads the specified notes file and outputs it as a new HTML file'''
-    template = load_templates("classnoteslayout.html")
-    concepts_list = read_notes_into_list("notes.txt", 400)
-    all_html = generate_all_html(concepts_list, template)
-    write_html_to_file(all_html,"classnotesbuilt.html")
+    write_html_to_file(Page.Build(),"classnotesbuilt.html")
 #TODO the javascript for youtubers doesnt work without internet.  
 # Thanks SoutheWest Airlines for helping me find that bug
     make_youtubers()
 
-# Do main
+# Do main if this is a standalone
 
 if __name__ == "__main__":
     main()
-
