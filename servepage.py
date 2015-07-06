@@ -32,20 +32,6 @@ import webapp2
 import buildhtmlfromnotes
 
 
-MAIN_PAGE_FORM_TEMPLATE = """\
-    <form action="/signed" method="post">
-      Subject:
-      <input value="%s" name="comment_subject"><br>
-      Your comment:
-      <div><textarea name="content" rows="3" cols="60"></textarea></div>
-      Your name:
-      <input value="%s" name="author_name">
-      Your city:
-      <input value="%s" name="author_location">
-      <br><input type="submit" value="Submit Comment">
-    </form>
-"""
-
 DEFAULT_SUBJECT = 'Your site'
 DEFAULT_AUTHOR = 'Anonymous'
 DEFAULT_LOCATION = 'Unknown'
@@ -95,9 +81,7 @@ class CommentsSection(webapp2.RequestHandler):
                     cgi.escape(author_name),
                     cgi.escape(author_location))
 
-        self.response.write(page_html.Build('<html><body>'))
-
-        self.response.write(MAIN_PAGE_FORM_TEMPLATE % form_args)
+        self.response.write(page_html.Build('<html><body>', form_args))
 
         # to_zone = get_localzone()
 

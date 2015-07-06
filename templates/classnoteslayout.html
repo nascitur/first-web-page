@@ -51,18 +51,18 @@
 
 {% endblock content %}
 
-{% block comment %}
+{% block comments %}
   <form action="/signed" method="post">
     Subject:
-    <input value="%s" name="comment_subject"><br>
+    <input value=" {{ form_args[0] }} " name="comment_subject"><br>
     Your comment:
     <div><textarea name="content" rows="3" cols="60"></textarea></div>
     Your name:
-    <input value="%s" name="author_name">
+    <input value="{{ form_args[1] }}" name="author_name">
     Your city:
-    <input value="%s" name="author_location">
+    <input value="{{ form_args[2] }}" name="author_location">
     <br><input type="submit" value="Submit Comment">
   </form>
-{% endblock comment %}
+{% endblock comments %}
 
 

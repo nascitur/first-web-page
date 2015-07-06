@@ -104,7 +104,7 @@ def tag_image(file_name, alt_string, max_width):
 
 # From the concepts list, Generate all HTML into a big string
 
-def generate_all_html(concepts_list, template):
+def generate_all_html(concepts_list, template, form_args):
     """
     Outputs a string of HTML build from inputted concepts_list
     """
@@ -114,7 +114,8 @@ def generate_all_html(concepts_list, template):
             concept[2] += '</ul>'
         concept.append(text_left)
         text_left = not text_left
-    all_html = template.render(concepts_list=concepts_list)
+    all_html = template.render(concepts_list=concepts_list,
+                                form_args=form_args)
     all_html = all_html.replace(': **', ''':
     </div>
     <div class="bulletlist">
@@ -156,10 +157,10 @@ class Page(object):
     def __init__(self, all_html):
         self.all_html = all_html
 
-    def Build(self, all_html):
+    def Build(self, all_html, form_args):
         template = load_templates("classnoteslayout.html")
         concepts_list = read_notes_into_list("notes.txt", 400)
-        all_html = generate_all_html(concepts_list, template)
+        all_html = generate_all_html(concepts_list, template, form_args)
         self.all_html = all_html
         return self.all_html
 
