@@ -75,12 +75,10 @@ class CommentPost(ndb.Model):
 
 class CommentsSection(webapp2.RequestHandler):
     """
-    Build the main comment page
+    Build the main page with comment section
     """
     def get(self):
         page_html = buildhtmlfromnotes.Page('<html><body>')
-        self.response.write(page_html.Build('<html><body>'))
-#        self.response.write('<html><body>')
         comment_subject = self.request.get('comment_subject',
                                           DEFAULT_SUBJECT)
         author_name = self.request.get('author_name', 
@@ -93,10 +91,13 @@ class CommentsSection(webapp2.RequestHandler):
         greetings_query = ndb.gql('SELECT * FROM CommentPost WHERE date>:1 ORDER BY date DESC',recentdate)
         greetings = greetings_query.fetch(10)
 
-        self.response.write(MAIN_PAGE_FORM_TEMPLATE % 
-                            (cgi.escape(comment_subject),
-                            cgi.escape(author_name),
-                            cgi.escape(author_location)))
+        form_args = (cgi.escape(comment_subject),
+                    cgi.escape(author_name),
+                    cgi.escape(author_location))
+
+        self.response.write(page_html.Build('<html><body>'))
+
+        self.response.write(MAIN_PAGE_FORM_TEMPLATE % form_args)
 
         # to_zone = get_localzone()
 
@@ -112,8 +113,6 @@ class CommentsSection(webapp2.RequestHandler):
                                  postdate.strftime("%H:%M"),
                                  cgi.escape(commentsubject),
                                  cgi.escape(greeting.content)))
-
-        self.response.write('</body></html>')
 
 
 class Guestbook(webapp2.RequestHandler):

@@ -49,7 +49,20 @@
     {% endif %}
   {% endfor %}
 
-{% endblock %}
+{% endblock content %}
 
+{% block comment %}
+  <form action="/signed" method="post">
+    Subject:
+    <input value="%s" name="comment_subject"><br>
+    Your comment:
+    <div><textarea name="content" rows="3" cols="60"></textarea></div>
+    Your name:
+    <input value="%s" name="author_name">
+    Your city:
+    <input value="%s" name="author_location">
+    <br><input type="submit" value="Submit Comment">
+  </form>
+{% endblock comment %}
 
 
