@@ -48,20 +48,19 @@
 </div>
     {% endif %}
   {% endfor %}
-
 {% endblock content %}
-
 {% block comments %}
-  <form action="/signed" method="post">
-    Subject:
+  <form class="green-form" action="/signed" method="post">
+    <h1>Comments</h1>
+    <span>Subject:</span>
     <input value=" {{ form_args[0] }} " name="comment_subject"><br>
-    Your comment:
+    <span>Your comment:</span>
     <div><textarea name="content" rows="3" cols="60"></textarea></div>
-    Your name:
+    <span>Your name:</span>
     <input value="{{ form_args[1] }}" name="author_name">
-    Your city:
+    Y<span>our city:</span>
     <input value="{{ form_args[2] }}" name="author_location">
-    <br><input type="submit" value="Submit Comment">
+    <br><input class="button" type="submit" value="Submit Comment">
   </form>
 {% endblock comments %}
 
