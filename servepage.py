@@ -85,8 +85,8 @@ class CommentsSection(webapp2.RequestHandler):
             commentsubject = greeting.subject
             postdate = greeting.date
             greeting_textblock += '<br><b>%(author)s</b> from %(location)s \
-                                   wrote on %(date)s at %(time)s about %(subj)s \
-                                   : <i>%(comment)s</i>' % \
+                                  wrote on %(date)s at %(time)s about %(subj)s:\
+                                  <i>%(comment)s</i>' % \
                                 {"author": cgi.escape(author), 
                                  "location": cgi.escape(authorplace), 
                                  "date": postdate.strftime("%B %d"),
