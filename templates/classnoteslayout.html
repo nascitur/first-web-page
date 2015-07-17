@@ -56,7 +56,7 @@
     <span>Subject:</span>
     <input value=" {{ form_args[0] }}" name="comment_subject"><br>
     <span>Your comment:</span>
-    {% if useralert -%}<span class="useralert">NO COMMENT TEXT ENTERED: TRY AGAIN</span>{% endif -%}
+    {% if form_args[4] -%}<span class="useralert">NO COMMENT TEXT ENTERED: TRY AGAIN</span>{% endif -%}
     <div><textarea name="content" rows="3" cols="60"></textarea></div>
     <span>Your name:</span>
     <input value="{{ form_args[1] }}" name="author_name">
@@ -64,9 +64,9 @@
     <input value="{{ form_args[2] }}" name="author_location">
     <br><input class="button" type="submit" value="Submit Comment">
   </form>
-  <div class="commentlist">
+  <div class="commentlist"><ul>
     {{ form_args[3]|safe }}
-  </div>
+  </ul></div>
 {% endblock comments %}
 
 
