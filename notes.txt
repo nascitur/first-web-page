@@ -92,6 +92,9 @@ Forms in html
 images/tpsreport.png "TPS Report"
 Forms are powerful and super great:
 ** Redirection: so you can link to the results of a form submission and also not have to do the resubmit when you press back - instead of responding to post with content, respond with redirect that provokes another GET.
+** Method ="post" allows data to be conveyed without passing it in the url.
+** Type = "submit" kicks off the post action when the button is pressed.
+** Name =  defines the variable that particular user data entry can be used to reference in your code.
 
 More python
 images/python2.png "Python language"
