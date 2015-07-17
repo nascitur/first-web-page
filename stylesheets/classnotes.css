@@ -7,7 +7,7 @@ body {
 
 /* Heading definitions */
 
-h1 {
+h1.section {
 	color:#141400;
 	font-size: 40px;
 	line-height:40px;
@@ -113,10 +113,13 @@ form.green-form {
 }
 
 h1.green-form {
-    font: 24px "Trebuchet MS", Arial, Helvetica, sans-serif;
-    padding: 5px 0px 20px 40px;
+    font: 36px "Trebuchet MS", Arial, Helvetica, sans-serif;
+    padding: 5px 0px 20px 10px;
     display: block;
-    margin: -30px -30px 10px -30px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
     color: #FFF;
     background: #9DC45F;
     text-shadow: 1px 1px 1px #949494;
@@ -195,11 +198,12 @@ select.green-form select {
 div.commentlist {
     margin-left:30px;
     margin-right:30px;
+    margin-top:0px;
     background: #F8F8F8;
     padding: 2px 30px 20px 30px;
     font: 14px Arial, Helvetica, sans-serif;
     color: #666;
-    line-height: 160%;
+    line-height: 180%;
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;

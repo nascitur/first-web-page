@@ -84,9 +84,9 @@ class CommentsSection(webapp2.RequestHandler):
             authorplace = greeting.author.authorlocation
             commentsubject = greeting.subject
             postdate = greeting.date
-            greeting_textblock += '<br><b>%(author)s</b> from %(location)s \
+            greeting_textblock += '<b>%(author)s</b> from %(location)s \
                                   wrote on %(date)s at %(time)s about %(subj)s:\
-                                  <i>%(comment)s</i>' % \
+                                  <i>%(comment)s</i><br>' % \
                                 {"author": cgi.escape(author), 
                                  "location": cgi.escape(authorplace), 
                                  "date": postdate.strftime("%B %d"),
@@ -132,7 +132,7 @@ class Guestbook(webapp2.RequestHandler):
         # sloppy way to be sure database is updated before reloading.
         # i would never do this in the real world
         time.sleep(1)
-        self.redirect('/')
+        self.redirect('/#comments')
 
 # Defines what is executed by the webserver
 
