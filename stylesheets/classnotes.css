@@ -79,6 +79,13 @@ pre {
 	font-weight: bold;
 }
 
+.useralert
+{
+    font-weight: bold;
+    color: red;
+    background: yellow;
+}
+
 .codesample {
 	background-color:#E0E0E0;
 	border-style:solid;
@@ -105,6 +112,7 @@ form.green-form {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
 }
+
 h1.green-form {
     font: 24px "Trebuchet MS", Arial, Helvetica, sans-serif;
     padding: 20px 0px 20px 40px;

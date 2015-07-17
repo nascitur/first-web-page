@@ -73,30 +73,33 @@ class CommentsSection(webapp2.RequestHandler):
                                             DEFAULT_LOCATION)
 
         recentdate = datetime.datetime.now() - datetime.timedelta(days=3)
+        # to_zone = get_localzone()
 
         greetings_query = ndb.gql('SELECT * FROM CommentPost WHERE date>:1 ORDER BY date DESC',recentdate)
         greetings = greetings_query.fetch(10)
-
-        form_args = (cgi.escape(comment_subject),
-                    cgi.escape(author_name),
-                    cgi.escape(author_location))
-
-        self.response.write(page_html.Build('<html><body>', form_args))
-
-        # to_zone = get_localzone()
+        greeting_textblock = ''
 
         for greeting in greetings:
             author = greeting.author.authorname
             authorplace = greeting.author.authorlocation
             commentsubject = greeting.subject
             postdate = greeting.date
-            self.response.write('<br><b>%s</b> from %s wrote on %s at %s about %s: <i>%s</i>' % 
-                                (cgi.escape(author), 
-                                 cgi.escape(authorplace), 
-                                 postdate.strftime("%B %d"),
-                                 postdate.strftime("%H:%M"),
-                                 cgi.escape(commentsubject),
-                                 cgi.escape(greeting.content)))
+            greeting_textblock += '<br><b>%(author)s</b> from %(location)s \
+                                   wrote on %(date)s at %(time)s about %(subj)s \
+                                   : <i>%(comment)s</i>' % \
+                                {"author": cgi.escape(author), 
+                                 "location": cgi.escape(authorplace), 
+                                 "date": postdate.strftime("%B %d"),
+                                 "time": postdate.strftime("%H:%M"),
+                                 "subj": cgi.escape(commentsubject),
+                                 "comment": cgi.escape(greeting.content)}
+
+        form_args = (cgi.escape(comment_subject),
+                    cgi.escape(author_name),
+                    cgi.escape(author_location),
+                    greeting_textblock)
+
+        self.response.write(page_html.Build('<html><body>', form_args))
 
 
 class Guestbook(webapp2.RequestHandler):
@@ -104,6 +107,7 @@ class Guestbook(webapp2.RequestHandler):
     Accept comments for the comment page
     """
     def post(self):
+        useralert = False
         comment_subject = self.request.get('comment_subject',
                                           DEFAULT_SUBJECT)
         author_name = self.request.get('author_name', 
@@ -120,7 +124,10 @@ class Guestbook(webapp2.RequestHandler):
 
         greeting.content = self.request.get('content')
         greeting.subject = comment_subject
-        greeting.put()
+        if greeting.content:
+            greeting.put()
+        else:
+            useralert = True
 
         # sloppy way to be sure database is updated before reloading.
         # i would never do this in the real world
