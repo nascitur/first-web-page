@@ -66,11 +66,11 @@ class CommentsSection(webapp2.RequestHandler):
     def get(self):
         page_html = buildhtmlfromnotes.Page('<html><body>')
         comment_subject = self.request.get('comment_subject',
-                                          DEFAULT_SUBJECT)
-        author_name = self.request.get('author_name', 
-                                        DEFAULT_AUTHOR)
-        author_location = self.request.get('author_location', 
-                                            DEFAULT_LOCATION)
+                                           DEFAULT_SUBJECT)
+        author_name = self.request.get('author_name',
+                                       DEFAULT_AUTHOR)
+        author_location = self.request.get('author_location',
+                                           DEFAULT_LOCATION)
         comment_content = self.request.get('content')
         this_query = str(self.request.query_string)
         useralert = False
@@ -86,7 +86,8 @@ class CommentsSection(webapp2.RequestHandler):
         if this_query.find('nocomment')!=-1:
             useralert = True
 
-        greetings_query = ndb.gql('SELECT * FROM CommentPost WHERE date>:1 ORDER BY date DESC',recentdate)
+        greetings_query = ndb.gql('SELECT * FROM CommentPost WHERE date>:1 \
+                                  ORDER BY date DESC',recentdate)
         greetings = greetings_query.fetch(10)
         greeting_textblock = ''
 
@@ -98,18 +99,18 @@ class CommentsSection(webapp2.RequestHandler):
             greeting_textblock += '<li class="clist"><b>%(author)s</b> from \
                                    %(location)s wrote on %(date)s at %(time)s\
                                    about %(subj)s: <i>%(comment)s</i>' % \
-                                {"author": cgi.escape(author), 
-                                 "location": cgi.escape(authorplace), 
+                                {"author": cgi.escape(author),
+                                 "location": cgi.escape(authorplace),
                                  "date": postdate.strftime("%B %d"),
                                  "time": postdate.strftime("%H:%M"),
                                  "subj": cgi.escape(commentsubject),
                                  "comment": cgi.escape(greeting.content)}
 
         form_args = (cgi.escape(comment_subject),
-                    cgi.escape(author_name),
-                    cgi.escape(author_location),
-                    greeting_textblock, 
-                    useralert)
+                     cgi.escape(author_name),
+                     cgi.escape(author_location),
+                     greeting_textblock,
+                     useralert)
 
         self.response.write(page_html.Build('<html><body>', form_args))
 
@@ -120,18 +121,16 @@ class Guestbook(webapp2.RequestHandler):
     """
     def post(self):
         comment_subject = self.request.get('comment_subject',
-                                          DEFAULT_SUBJECT)
-        author_name = self.request.get('author_name', 
-                                        DEFAULT_AUTHOR)
-        author_location = self.request.get('author_location', 
-                                            DEFAULT_LOCATION)
+                                           DEFAULT_SUBJECT)
+        author_name = self.request.get('author_name',
+                                       DEFAULT_AUTHOR)
+        author_location = self.request.get('author_location',
+                                           DEFAULT_LOCATION)
 
-        greeting = CommentPost(
-                    parent=comment_key(comment_subject))
+        greeting = CommentPost(parent=comment_key(comment_subject))
 
-        greeting.author = Author(
-                    authorname=author_name,
-                    authorlocation=author_location)
+        greeting.author = Author(authorname=author_name,
+                                 authorlocation=author_location)
 
         greeting.content = self.request.get('content')
         greeting.subject = comment_subject
