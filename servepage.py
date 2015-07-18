@@ -19,6 +19,7 @@ import cgi
 import urllib
 import datetime
 import time
+import re
 # from tzlocal import get_localzone
 
 # Import GAE and Google datastore modules
@@ -63,19 +64,22 @@ class CommentPost(ndb.Model):
     date = ndb.DateTimeProperty(auto_now_add=True)
 
 
+def strclean(stringtovalidate):
+        return re.sub('[^A-Za-z0-9 ?!,.]+', '', stringtovalidate)
+
 class CommentsSection(webapp2.RequestHandler):
     """
     Build the main page with comment section
     """
     def get(self):
         page_html = buildhtmlfromnotes.Page('<html><body>')
-        comment_subject = str(self.request.get('comment_subject',
-                                               DEFAULT_SUBJECT))[:MAX_AUTHSUBJ]
-        author_name = str(self.request.get('author_name',
-                                           DEFAULT_AUTHOR))[:MAX_AUTHSUBJ]
-        author_location = str(self.request.get('author_location',
-                                               DEFAULT_LOCATION))[:MAX_AUTHSUBJ]
-        comment_content = str(self.request.get('content'))[:MAX_COMMENT]
+        comment_subject = strclean(str(self.request.get('comment_subject',
+                                               DEFAULT_SUBJECT))[:MAX_AUTHSUBJ])
+        author_name = strclean(str(self.request.get('author_name',
+                                           DEFAULT_AUTHOR))[:MAX_AUTHSUBJ])
+        author_location = strclean(str(self.request.get('author_location',
+                                               DEFAULT_LOCATION))[:MAX_AUTHSUBJ])
+        comment_content = strclean(str(self.request.get('content'))[:MAX_COMMENT])
         this_query = str(self.request.query_string)
         useralert = False
 
@@ -119,19 +123,19 @@ class Guestbook(webapp2.RequestHandler):
     Accept comments for the comment page
     """
     def post(self):
-        comment_subject = str(self.request.get('comment_subject',
-                                           DEFAULT_SUBJECT))[:MAX_AUTHSUBJ]
-        author_name = str(self.request.get('author_name',
-                                       DEFAULT_AUTHOR))[:MAX_AUTHSUBJ]
-        author_location = str(self.request.get('author_location',
-                                           DEFAULT_LOCATION))[:MAX_AUTHSUBJ]
+        comment_subject = strclean(str(self.request.get('comment_subject',
+                                           DEFAULT_SUBJECT))[:MAX_AUTHSUBJ])
+        author_name = strclean(str(self.request.get('author_name',
+                                       DEFAULT_AUTHOR))[:MAX_AUTHSUBJ])
+        author_location = strclean(str(self.request.get('author_location',
+                                           DEFAULT_LOCATION))[:MAX_AUTHSUBJ])
 
         greeting = CommentPost(parent=comment_key(comment_subject))
 
         greeting.author = Author(authorname=author_name,
                                  authorlocation=author_location)
 
-        greeting.content = str(self.request.get('content'))[:MAX_COMMENT]
+        greeting.content = strclean(str(self.request.get('content'))[:MAX_COMMENT])
         greeting.subject = comment_subject
         if greeting.content:
             greeting.put()
