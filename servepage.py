@@ -36,6 +36,8 @@ import buildhtmlfromnotes
 DEFAULT_SUBJECT = 'Your site'
 DEFAULT_AUTHOR = 'Anonymous'
 DEFAULT_LOCATION = 'Unknown'
+NUM_COMMENTS = 10  # raw number of comments to display
+RECENT = 3 # number of days of comments to consider for display
 
 # Trim any input text to these lengths
 MAX_AUTHSUBJ = 40
@@ -83,15 +85,15 @@ class CommentsSection(webapp2.RequestHandler):
         this_query = str(self.request.query_string)
         useralert = False
 
-        recentdate = datetime.datetime.now() - datetime.timedelta(days=3)
-        # to_zone = get_localzone()
+        recentdate = datetime.datetime.now() - datetime.timedelta(days=RECENT)
+        # to_zone = get_localzone() # development - havent figured out 
 
         if this_query.find('nocomment')!=-1:
             useralert = True
 
         greetings_query = ndb.gql('SELECT * FROM CommentPost WHERE date>:1 \
                                   ORDER BY date DESC',recentdate)
-        greetings = greetings_query.fetch(10)
+        greetings = greetings_query.fetch(NUM_COMMENTS)
         greeting_textblock = ''
 
         for greeting in greetings:
@@ -137,9 +139,9 @@ class Guestbook(webapp2.RequestHandler):
 
         greeting.content = strclean(str(self.request.get('content'))[:MAX_COMMENT])
         greeting.subject = comment_subject
-        if greeting.content:
+        if greeting.content.strip():
             greeting.put()
-            time.sleep(1)       # sloppy way to ensure update captured
+            #time.sleep(1)     #only required in local deployment
             self.redirect('/#comments')
         else:
             self.redirect('/?nocomment#comments')
