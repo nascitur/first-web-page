@@ -78,11 +78,6 @@ class CommentsSection(webapp2.RequestHandler):
         recentdate = datetime.datetime.now() - datetime.timedelta(days=3)
         # to_zone = get_localzone()
 
-#debug
-        print "DEBUGDEBUG"
-        print comment_content
-        print this_query.find('submitted')
-
         if this_query.find('nocomment')!=-1:
             useralert = True
 

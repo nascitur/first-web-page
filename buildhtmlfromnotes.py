@@ -21,8 +21,6 @@ import cgi
 import getimageinfo
 import videos
 import youtubers
-import pagecomments
-#import webapp2
 
 def load_templates(template_name):
     """
