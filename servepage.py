@@ -16,11 +16,10 @@
 # Import system modules
 
 import cgi
-import urllib
 import datetime
 import time
 import re
-# from tzlocal import get_localzone
+# from tzlocal import get_localzone # dev
 
 # Import GAE and Google datastore modules
 
