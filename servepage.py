@@ -36,6 +36,10 @@ DEFAULT_SUBJECT = 'Your site'
 DEFAULT_AUTHOR = 'Anonymous'
 DEFAULT_LOCATION = 'Unknown'
 
+# Trim any input text to these lengths
+MAX_AUTHSUBJ = 40
+MAX_COMMENT = 300
+
 
 def comment_key(comment_subject=DEFAULT_SUBJECT):
     """
@@ -65,13 +69,13 @@ class CommentsSection(webapp2.RequestHandler):
     """
     def get(self):
         page_html = buildhtmlfromnotes.Page('<html><body>')
-        comment_subject = self.request.get('comment_subject',
-                                           DEFAULT_SUBJECT)
-        author_name = self.request.get('author_name',
-                                       DEFAULT_AUTHOR)
-        author_location = self.request.get('author_location',
-                                           DEFAULT_LOCATION)
-        comment_content = self.request.get('content')
+        comment_subject = str(self.request.get('comment_subject',
+                                               DEFAULT_SUBJECT))[:MAX_AUTHSUBJ]
+        author_name = str(self.request.get('author_name',
+                                           DEFAULT_AUTHOR))[:MAX_AUTHSUBJ]
+        author_location = str(self.request.get('author_location',
+                                               DEFAULT_LOCATION))[:MAX_AUTHSUBJ]
+        comment_content = str(self.request.get('content'))[:MAX_COMMENT]
         this_query = str(self.request.query_string)
         useralert = False
 
@@ -115,19 +119,19 @@ class Guestbook(webapp2.RequestHandler):
     Accept comments for the comment page
     """
     def post(self):
-        comment_subject = self.request.get('comment_subject',
-                                           DEFAULT_SUBJECT)
-        author_name = self.request.get('author_name',
-                                       DEFAULT_AUTHOR)
-        author_location = self.request.get('author_location',
-                                           DEFAULT_LOCATION)
+        comment_subject = str(self.request.get('comment_subject',
+                                           DEFAULT_SUBJECT))[:MAX_AUTHSUBJ]
+        author_name = str(self.request.get('author_name',
+                                       DEFAULT_AUTHOR))[:MAX_AUTHSUBJ]
+        author_location = str(self.request.get('author_location',
+                                           DEFAULT_LOCATION))[:MAX_AUTHSUBJ]
 
         greeting = CommentPost(parent=comment_key(comment_subject))
 
         greeting.author = Author(authorname=author_name,
                                  authorlocation=author_location)
 
-        greeting.content = self.request.get('content')
+        greeting.content = str(self.request.get('content'))[:MAX_COMMENT]
         greeting.subject = comment_subject
         if greeting.content:
             greeting.put()

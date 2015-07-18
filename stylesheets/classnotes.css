@@ -204,6 +204,7 @@ div.commentlist {
     font: 14px Arial, Helvetica, sans-serif;
     color: #666;
     border-radius: 5px;
+    word-wrap: break-word;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
 }
