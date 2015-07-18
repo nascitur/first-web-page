@@ -19,7 +19,7 @@ import cgi
 import datetime
 import time
 import re
-# from tzlocal import get_localzone # dev
+#from tzlocal import get_localzone # dev - bug: wont import even after install
 
 # Import GAE and Google datastore modules
 
@@ -85,7 +85,7 @@ class CommentsSection(webapp2.RequestHandler):
         useralert = False
 
         recentdate = datetime.datetime.now() - datetime.timedelta(days=RECENT)
-        # to_zone = get_localzone() # development - havent figured out 
+        #to_zone = get_localzone() # development - havent figured out 
 
         if this_query.find('nocomment')!=-1:
             useralert = True
@@ -100,6 +100,7 @@ class CommentsSection(webapp2.RequestHandler):
             authorplace = greeting.author.authorlocation
             commentsubject = greeting.subject
             postdate = greeting.date
+            #postdate = to_zone.normalize(greeting.date.replace(tzinfo=to_zone))
             greeting_textblock += '<li class="clist"><b>%(author)s</b> from \
                                    %(location)s wrote on %(date)s at %(time)s\
                                    about %(subj)s: <i>%(comment)s</i>' % \
