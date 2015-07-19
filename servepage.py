@@ -31,12 +31,15 @@ import webapp2
 
 import buildhtmlfromnotes
 
-
+# Default text for comment form entry
 DEFAULT_SUBJECT = 'Your site'
 DEFAULT_AUTHOR = 'Anonymous'
 DEFAULT_LOCATION = 'Unknown'
-NUM_COMMENTS = 10  # raw number of comments to display
-RECENT = 3 # number of days of comments to consider for display
+
+# Raw number of comments to display on the site
+NUM_COMMENTS = 10
+# Number of days of comments to consider for display
+RECENT = 3 
 
 # Trim any input text to these lengths
 MAX_AUTHSUBJ = 40
@@ -66,7 +69,11 @@ class CommentPost(ndb.Model):
 
 
 def strclean(stringtovalidate):
+    """
+    Cleans up a string to ensure valid input by restricting to safe characters
+    """
         return re.sub('[^A-Za-z0-9 ?!,.]+', '', stringtovalidate)
+
 
 class CommentsSection(webapp2.RequestHandler):
     """
