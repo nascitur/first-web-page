@@ -166,7 +166,7 @@ class Page(object):
 
 # def main():
 #     write_html_to_file(Page.Build(), "classnotesbuilt.html")
-# #TODO the javascript for youtubers doesnt work without internet.  
+# #TODO the javascript for youtubers doesnt work without internet.
 # # Thanks SoutheWest Airlines for helping me find that bug
 #     make_youtubers()
 

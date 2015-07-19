@@ -17,8 +17,8 @@
 
 import cgi
 import datetime
-import time
 import re
+#import time  # dev
 #from tzlocal import get_localzone # dev - bug: wont import even after install
 
 # Import GAE and Google datastore modules
@@ -80,10 +80,12 @@ class CommentsSection(webapp2.RequestHandler):
     Build the main page with comment section
     """
     def get(self):
+        """
+        Page assembled on get, comment data is added on post
+        """
         page_html = buildhtmlfromnotes.Page('<html><body>')
 
         recentdate = datetime.datetime.now() - datetime.timedelta(days=RECENT)
-        #to_zone = get_localzone() # development - havent figured out
 
         this_query = str(self.request.query_string)
         if this_query.find('nocomment') != -1:
@@ -128,6 +130,9 @@ class Guestbook(webapp2.RequestHandler):
     Accept comments for the comment page
     """
     def post(self):
+        """
+        Page assembled on get, comment data is added on post
+        """
         comment_subject = strclean(str(self.request.get('comment_subject',
                                            DEFAULT_SUBJECT))[:MAX_AUTHSUBJ])
         author_name = strclean(str(self.request.get('author_name',
@@ -139,6 +144,7 @@ class Guestbook(webapp2.RequestHandler):
 
         greeting.author = Author(authorname=author_name,
                                  authorlocation=author_location)
+        #to_zone = get_localzone() # development - havent figured out
 
         greeting.content = strclean(str(self.request.get('content'))[:MAX_COMMENT])
         greeting.subject = comment_subject
