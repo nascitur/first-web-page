@@ -54,14 +54,14 @@
   <form class="green-form" action="/signed" method="post">
     <h1>Comments</h1>
     <span>Subject:</span>
-    <input value=" {{ form_args[0] }}" name="comment_subject"><br>
+    <input value=" {{ form_args[0] }}" name="comment_subject" maxlength="{{ form_args[4] }}"><br>
     <span>Your comment:</span>
-    {% if form_args[4] -%}<span class="useralert">NO COMMENT TEXT ENTERED: TRY AGAIN</span>{% endif -%}
-    <div><textarea name="content" rows="3" cols="60"></textarea></div>
+    {% if form_args[6] -%}<span class="useralert">NO COMMENT TEXT ENTERED: TRY AGAIN</span>{% endif -%}
+    <div><textarea name="content" rows="3" cols="60" maxlength="{{ form_args[5] }}"></textarea></div>
     <span>Your name:</span>
-    <input value="{{ form_args[1] }}" name="author_name">
+    <input value="{{ form_args[1] }}" name="author_name" maxlength="{{ form_args[4] }}">
     Y<span>our city:</span>
-    <input value="{{ form_args[2] }}" name="author_location">
+    <input value="{{ form_args[2] }}" name="author_location" maxlength="{{ form_args[4] }}">
     <br><input class="button" type="submit" value="Submit Comment">
   </form>
   <div class="commentlist"><ul>

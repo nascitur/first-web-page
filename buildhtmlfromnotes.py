@@ -26,9 +26,9 @@ def load_templates(template_name):
     """
     Load the templates for jinja2 rendering
     """
-    templat_dir = os.path.join(os.path.dirname(__file__),'templates')
-    jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(templat_dir),
-                                   autoescape = True)
+    templat_dir = os.path.join(os.path.dirname(__file__), 'templates')
+    jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader(templat_dir),
+                                   autoescape=True)
     return jinja_env.get_template(template_name)
 
 # This reads the notes text file and turns the title, image, and section text
@@ -72,7 +72,7 @@ def parse_image_text(imagetext, max_width):
     Parses the messy image text and returns complete image tag
     """
     image_filenalt = [imagetext[:imagetext.find(' ')],
-                        imagetext[imagetext.find(' ')+1:]]
+                      imagetext[imagetext.find(' ')+1:]]
     tagged_image = tag_image(image_filenalt[0], image_filenalt[1], max_width)
     return tagged_image
 
@@ -113,7 +113,7 @@ def generate_all_html(concepts_list, template, form_args):
         concept.append(text_left)
         text_left = not text_left
     all_html = template.render(concepts_list=concepts_list,
-                                form_args=form_args)
+                               form_args=form_args)
     all_html = all_html.replace(': **', ''':
     </div>
     <div class="bulletlist">
@@ -164,13 +164,13 @@ class Page(object):
 
 # Main function if this is a standalone
 
-def main():
-    write_html_to_file(Page.Build(),"classnotesbuilt.html")
-#TODO the javascript for youtubers doesnt work without internet.  
-# Thanks SoutheWest Airlines for helping me find that bug
-    make_youtubers()
+# def main():
+#     write_html_to_file(Page.Build(), "classnotesbuilt.html")
+# #TODO the javascript for youtubers doesnt work without internet.  
+# # Thanks SoutheWest Airlines for helping me find that bug
+#     make_youtubers()
 
-# Do main if this is a standalone
+# # Do main if this is a standalone
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()

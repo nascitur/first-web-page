@@ -39,7 +39,7 @@ DEFAULT_LOCATION = 'Unknown'
 # Raw number of comments to display on the site
 NUM_COMMENTS = 10
 # Number of days of comments to consider for display
-RECENT = 3 
+RECENT = 3
 
 # Trim any input text to these lengths
 MAX_AUTHSUBJ = 40
@@ -72,7 +72,7 @@ def strclean(stringtovalidate):
     """
     Cleans up a string to ensure valid input by restricting to safe characters
     """
-        return re.sub('[^A-Za-z0-9 ?!,.]+', '', stringtovalidate)
+    return re.sub('[^A-Za-z0-9 ?!,.]+', '', stringtovalidate)
 
 
 class CommentsSection(webapp2.RequestHandler):
@@ -81,24 +81,18 @@ class CommentsSection(webapp2.RequestHandler):
     """
     def get(self):
         page_html = buildhtmlfromnotes.Page('<html><body>')
-        comment_subject = strclean(str(self.request.get('comment_subject',
-                                               DEFAULT_SUBJECT))[:MAX_AUTHSUBJ])
-        author_name = strclean(str(self.request.get('author_name',
-                                           DEFAULT_AUTHOR))[:MAX_AUTHSUBJ])
-        author_location = strclean(str(self.request.get('author_location',
-                                               DEFAULT_LOCATION))[:MAX_AUTHSUBJ])
-        comment_content = strclean(str(self.request.get('content'))[:MAX_COMMENT])
-        this_query = str(self.request.query_string)
-        useralert = False
 
         recentdate = datetime.datetime.now() - datetime.timedelta(days=RECENT)
-        #to_zone = get_localzone() # development - havent figured out 
+        #to_zone = get_localzone() # development - havent figured out
 
-        if this_query.find('nocomment')!=-1:
+        this_query = str(self.request.query_string)
+        if this_query.find('nocomment') != -1:
             useralert = True
+        else:
+            useralert = False
 
         greetings_query = ndb.gql('SELECT * FROM CommentPost WHERE date>:1 \
-                                  ORDER BY date DESC',recentdate)
+                                  ORDER BY date DESC', recentdate)
         greetings = greetings_query.fetch(NUM_COMMENTS)
         greeting_textblock = ''
 
@@ -118,10 +112,12 @@ class CommentsSection(webapp2.RequestHandler):
                                  "subj": cgi.escape(commentsubject),
                                  "comment": cgi.escape(greeting.content)}
 
-        form_args = (cgi.escape(comment_subject),
-                     cgi.escape(author_name),
-                     cgi.escape(author_location),
+        form_args = (DEFAULT_SUBJECT,
+                     DEFAULT_AUTHOR,
+                     DEFAULT_LOCATION,
                      greeting_textblock,
+                     MAX_AUTHSUBJ,
+                     MAX_COMMENT,
                      useralert)
 
         self.response.write(page_html.Build('<html><body>', form_args))
